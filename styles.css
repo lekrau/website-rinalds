@@ -91,11 +91,24 @@ body {
 body {
     background: var(--page__background);
     color: var(--text--main);
+    padding: 0 50px;
 }
 
-header {}
+header {
+    max-width: 100vw;
+    padding: 15px 0;
+    display: flex;
+    gap: 50px;
+    justify-content: stretch;
+    align-items: center;
+}
 
-nav {}
+nav {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
 
 @media screen and (width <=500px) {}
 
@@ -107,7 +120,7 @@ h1 {
 
 h2 {
     font-size: 27px;
-    margin: var(--spacing--small);
+    margin: 0 0 0 50px;
 }
 
 h3 {
@@ -115,6 +128,25 @@ h3 {
     margin: var(--spacing--large) 0 var(--spacing--extra-small) 0;
 }
 
+.hero {
+}
+
+.hero img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center 35%;
+}
+
 section {
-    margin: var(--spacing--extra-large) 0;
+    height: 350px;
+    margin: 20px 0;
+    padding: 20px 0 0 0;
+    background-color: #f2f3ee;
+    box-shadow: 0 16px 40px rgb(37 58 50 / 7%);
+    border-radius: 15px;
+}
+
+footer {
+    height: 200px;
 }
