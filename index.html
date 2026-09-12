@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -10,27 +10,69 @@
 
 <body>
     <header>
-        <div class="logo">
-            LOGO<br>
-            UNTERNEHMEN
-        </div>
-        <nav>
-            <a href="#FAQ">FAQ</a>
-            <a href="#about">Über uns</a>
-            <a href="#contact">Kontakt</a>
-        </nav>
-        <div class="CTA-bar">
-            <button>Kontakt aufnehmen</button>
+        <div class="header-container">
+            <div class="logo">
+                <span>UNTERNEHMEN</span>
+                <span>LOGO</span>
+            </div>
+            <nav>
+                <a href="#process">Schritte</a>
+                <a href="#FAQ">FAQ</a>
+                <a href="#about">Über uns</a>
+                <a href="#contact">Kontakt</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+            <div class="CTA-bar">
+                <button class="cta-button">Kontakt aufnehmen</button>
+            </div>
         </div>
     </header>
     <div class="hero">
-        <img
-            src="/Users/leon/Library/CloudStorage/OneDrive-NORDAKADEMIE/3Dokumente/Softwareentwicklung/Projekte/Website Rinalds Steuerberater/assets/geralt-euro-3317432_1920.jpg">
-        <button>Kontakt aufnehmen</button>
+        <img src="https://up.picr.de/51289339hb.jpg">
+        <h1>Es ist Ihr Geld.<br>Zeit, es zurückzuholen.</h1>
+        <button class="cta-button">Kontakt aufnehmen</button>
     </div>
     <main>
+        <section id="process">
+            <h2>Steuererstattung in 3 einfachen Schritten</h2>
+            <div class="process__container">
+                <!-- Process steps ggf. ähnlich wie Karten von Skipass-Vergleich (oder https://www.incom.lt/en/process-2/) gestalten -->
+                <div class="process__step">
+                    <img src="https://images.unsplash.com/vector-1769004080143-f1664190076a">
+                    <h3>1. Kontakt aufnehmen</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="process__step">
+                    <img src="https://images.unsplash.com/vector-1769004080143-f1664190076a">
+                    <h3>2. Unterlagen übermitteln</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="process__step">
+                    <img src="https://images.unsplash.com/vector-1769004080143-f1664190076a">
+                    <h3>3. Erstattung erhalten</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </section>
         <section id="FAQ">
-            <h2>FAQ</h2>
+            <div class="FAQ__container">
+                <div class="FAQ__container__left">
+                    <h2>FAQ</h2>
+                    <ul class="FAQ__questions">
+                        <li class="question--active">Ist das legal?</li>
+                        <li>Wie viel Geld bekomme ich?</li>
+                        <li>Dritte Frage?</li>
+                    </ul>
+                </div>
+                <div class="FAQ__container__right">
+                    <h3>Ist das legal?</h3>
+                    <p class="FAQ__answer">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi enim nihil pariatur perspiciatis
+                        iure, quaerat eum expedita itaque quibusdam dicta possimus accusantium distinctio facilis
+                        voluptatibus dolorem amet inventore! Aut, libero.
+                    </p>
+                </div>
+            </div>
         </section>
         <section id="about">
             <h2>Über uns</h2>
@@ -41,6 +83,33 @@
     </main>
     <footer>
         <h2>Footer</h2>
+        <div class="footer__container">
+            <div class="footer__navigation">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#process">Schritte</a></li>
+                    <li><a href="#FAQ">FAQ</a></li>
+                    <li><a href="#about">Über uns</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer__legal">
+                <h3>Rechtliches</h3>
+                <ul>
+                    <li>Impressum</li>
+                    <li>Datenschutz</li>
+                </ul>
+            </div>
+            <div class="footer__contact">
+                <h3>Kontakt</h3>
+                <address>
+                    <p>Unternehmen Steuerberatung</p>
+                    <p>Straße 123, 12345 Köln</p>
+                    <p>E-Mail: </p>
+                    <p>Telefon: </p>
+                </address>
+            </div>
+        </div>
     </footer>
 </body>
 
