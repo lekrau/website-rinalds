@@ -141,15 +141,6 @@ header nav {
     top: 40%;
 }
 
-.hero button {
-    position: absolute;
-    right: 10%;
-    bottom: 20%;
-    padding: 20px 30px;
-    font-size: large;
-    border-radius: 30px;
-}
-
 /* Sections */
 main section {
     min-height: 350px;
