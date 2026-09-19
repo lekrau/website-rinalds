@@ -39,12 +39,15 @@ sections.forEach((section) => {
 function toggleHamburgerMenu() {
     const nav = document.querySelector("header nav");
     const CLASS_NAME = "responsive";
+    const isOpen = nav.classList.contains(CLASS_NAME);
 
-    if (nav.classList.contains(CLASS_NAME)) {
+    if (isOpen) {
         nav.classList.remove(CLASS_NAME);
     } else {
         nav.classList.add(CLASS_NAME);
     }
+
+    hamburgerMenuButton.setAttribute("aria-expanded", !isOpen);
 }
 
 const hamburgerMenuButton = document.querySelector(".hamburger-menu");
@@ -53,4 +56,6 @@ hamburgerMenuButton.addEventListener("click", toggleHamburgerMenu);
 function closeHamburgerMenu() {
     const nav = document.querySelector("header nav");
     nav.classList.remove("responsive");
+
+    hamburgerMenuButton.setAttribute("aria-expanded", "false");
 }
