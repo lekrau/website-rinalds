@@ -7,6 +7,7 @@
     <title>Prototyp</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="script.js" defer></script>
 </head>
 
@@ -17,16 +18,20 @@
                 <span>UNTERNEHMEN</span>
                 <span>LOGO</span>
             </div>
-            <nav>
-                <a href="#process">Schritte</a>
-                <a href="#FAQ">FAQ</a>
-                <a href="#about">Über uns</a>
-                <a href="#contact">Kontakt</a>
-            </nav>
-            <div class="CTA-bar">
-                <a href="#contact" class="button">Kontakt aufnehmen</a>
-            </div>
+            <a href="javascript:void(0);" class="hamburger-menu" onclick="toggleHamburgerMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
         </div>
+        <nav>
+            <a href="#process" onclick="closeHamburgerMenu()">Schritte</a>
+            <a href="#FAQ" onclick="closeHamburgerMenu()">FAQ</a>
+            <a href="#about" onclick="closeHamburgerMenu()">Über uns</a>
+            <a href="#contact" onclick="closeHamburgerMenu()">Kontakt</a>
+        </nav>
+        <div class="CTA-bar">
+            <a href="#contact" class="button">Kontakt aufnehmen</a>
+        </div>
+
     </header>
     <div class="hero">
         <img src="https://up.picr.de/51289339hb.jpg">

@@ -33,3 +33,21 @@ const sections = document.querySelectorAll(".hero, section, footer");
 sections.forEach((section) => {
     observer.observe(section);
 });
+
+
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function toggleHamburgerMenu() {
+    const nav = document.querySelector("header nav");
+    const CLASS_NAME = "responsive";
+
+    if (nav.classList.contains(CLASS_NAME)) {
+        nav.classList.remove(CLASS_NAME);
+    } else {
+        nav.classList.add(CLASS_NAME);
+    }
+}
+
+function closeHamburgerMenu() {
+    const nav = document.querySelector("header nav");
+    nav.classList.remove("responsive");
+}
