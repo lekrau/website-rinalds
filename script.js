@@ -47,6 +47,9 @@ function toggleHamburgerMenu() {
     }
 }
 
+const hamburgerMenuButton = document.querySelector(".hamburger-menu");
+hamburgerMenuButton.addEventListener("click", toggleHamburgerMenu);
+
 function closeHamburgerMenu() {
     const nav = document.querySelector("header nav");
     nav.classList.remove("responsive");
