@@ -14,6 +14,7 @@
     --spacing__vertical--level3: 20px;
     --spacing__vertical--level4: 15px;
     --spacing__vertical--level5: 10px;
+    --header-height: calc(48px + 2 * var(--spacing__vertical--level4));
 }
 
 /* Global Elements */
@@ -98,7 +99,7 @@ header .button {
 
 header nav {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     justify-content: flex-start;
     flex-grow: 1;
 }
@@ -115,6 +116,14 @@ header nav {
     header .button {
         display: none;
     }
+}
+
+header nav a {
+    padding: 0 0.5vw;
+}
+
+header nav a.active {
+    border-bottom: 2px solid var(--accent--main);
 }
 
 /* Hero */
@@ -146,6 +155,7 @@ main section {
     padding-left: var(--spacing__horizontal--level1);
     background-color: white;
     box-shadow: 0 16px 40px rgb(37 58 50 / 7%);
+    scroll-margin-top: var(--header-height);
 }
 
 main section:nth-of-type(even) {
