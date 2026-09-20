@@ -53,6 +53,11 @@ function toggleHamburgerMenu() {
 const hamburgerMenuButton = document.querySelector(".hamburger-menu");
 hamburgerMenuButton.addEventListener("click", toggleHamburgerMenu);
 
+const navLinks = document.querySelectorAll("#nav a");
+navLinks.forEach(link => {
+    link.addEventListener("click", closeHamburgerMenu);
+});
+
 function closeHamburgerMenu() {
     const nav = document.querySelector("header nav");
     nav.classList.remove("responsive");
