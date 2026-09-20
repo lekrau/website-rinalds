@@ -34,7 +34,6 @@ sections.forEach((section) => {
     observer.observe(section);
 });
 
-
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function toggleHamburgerMenu() {
     const nav = document.querySelector("header nav");
@@ -50,6 +49,19 @@ function toggleHamburgerMenu() {
     hamburgerMenuButton.setAttribute("aria-expanded", !isOpen);
 }
 
+function closeHamburgerMenu() {
+    const nav = document.querySelector("header nav");
+    nav.classList.remove("responsive");
+
+    hamburgerMenuButton.setAttribute("aria-expanded", "false");
+}
+
+function resetResponsiveState() {
+    if (window.innerWidth > 500) {
+        closeHamburgerMenu();
+    }
+}
+
 const hamburgerMenuButton = document.querySelector(".hamburger-menu");
 hamburgerMenuButton.addEventListener("click", toggleHamburgerMenu);
 
@@ -58,9 +70,4 @@ navLinks.forEach(link => {
     link.addEventListener("click", closeHamburgerMenu);
 });
 
-function closeHamburgerMenu() {
-    const nav = document.querySelector("header nav");
-    nav.classList.remove("responsive");
-
-    hamburgerMenuButton.setAttribute("aria-expanded", "false");
-}
+window.addEventListener("resize", resetResponsiveState);
