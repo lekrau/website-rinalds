@@ -8,12 +8,15 @@
     /* --accent--stronger: #4D563E; */
     /* --accent--secondary: #B9684C; */
     /* --borders: #DED6C8; */
-    --spacing__horizontal--level1: 50px;
+    --spacing__horizontal--level1: calc(20.6px + 2vw);
+    --spacing__horizontal--level2: 30px;
+    --spacing__horizontal--level3: 10px;
     --spacing__vertical--level1: 40px;
     --spacing__vertical--level2: 30px;
     --spacing__vertical--level3: 20px;
     --spacing__vertical--level4: 15px;
     --spacing__vertical--level5: 10px;
+    --spacing__vertical--level6: 4px;
     --header-height: calc(48px + 2 * var(--spacing__vertical--level4));
 }
 
@@ -43,6 +46,10 @@ h3 {
 a {
     color: var(--text--main);
     text-decoration: none;
+}
+
+address {
+    font-style: normal;
 }
 
 button,
@@ -270,6 +277,84 @@ main section:nth-of-type(even) {
     padding: 5px 15px;
     border-radius: 18px;
     margin-top: var(--spacing__vertical--level3);
+}
+
+/* Kontakt */
+#contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing__horizontal--level1);
+    position: relative;
+    align-items: stretch;
+}
+
+@media screen and (width <=376px) {
+    #contact {
+        padding-left: calc((100vw - 320px) / 2);
+        padding-right: calc((100vw - 320px) / 2);
+    }
+}
+
+#contact>div {
+    flex-grow: 1;
+}
+
+.contact__details {
+    background-color: var(--text--main);
+    color: white;
+    padding: calc(10px + 3vw);
+    border-radius: 15px;
+}
+
+.logo-container {
+    display: flex;
+    gap: var(--spacing__horizontal--level2);
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo-padding {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    flex-shrink: 0;
+}
+
+.logo-padding img {
+    height: 75px;
+    width: 75px;
+}
+
+.contact__details h2 {
+    margin: 0;
+    font-size: calc(12.3px + 1vw);
+    /* font-size: 27px; */
+    /* font-size: calc(19.65px + 0.5vw); */
+    /* font-size: calc(15.975px + 0.75vw); */
+
+}
+
+.contact__details h3 {
+    margin-bottom: var(--spacing__vertical--level6);
+}
+
+.contact__details a {
+    display: flex;
+    gap: var(--spacing__horizontal--level3);
+    align-items: center;
+    color: white;
+    margin-bottom: var(--spacing__vertical--level5);
+}
+
+.contact__details a:hover {
+    color: var(--accent--main);
+}
+
+.calendly-inline-widget {}
+
+.calendly-inline-widget iframe {
+    display: block;
 }
 
 /* Footer */
