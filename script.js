@@ -71,3 +71,66 @@ navLinks.forEach(link => {
 });
 
 window.addEventListener("resize", resetResponsiveState);
+
+const clipboardButtons = document.querySelectorAll(".contact-copy");
+clipboardButtons.forEach((button) => {
+    button.addEventListener("click", copyToClipboard);
+});
+
+async function copyToClipboard(event) {
+    const button = event.currentTarget;
+    const value = button.dataset.copyValue;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+        } else {
+            copyToClipboardFallback(value);
+        }
+
+        showCopyFeedback(button, "Kopiert", true);
+    } catch {
+        showCopyFeedback(button, "Kopieren fehlgeschlagen", false);
+    }
+}
+
+function copyToClipboardFallback(value) {
+    const textArea = document.createElement("textarea");
+    textArea.value = value;
+    textArea.setAttribute("readonly", "");
+    textArea.style.position = "fixed";
+    textArea.style.opacity = "0";
+    document.body.appendChild(textArea);
+    textArea.select();
+
+    let copied = false;
+    try {
+        copied = document.execCommand("copy");
+    } finally {
+        textArea.remove();
+    }
+
+    if (!copied) {
+        throw new Error("Copy command failed");
+    }
+}
+
+function showCopyFeedback(button, message, wasSuccessful) {
+    const label = button.dataset.copyLabel;
+    const feedback = button.querySelector(".contact-copy__feedback");
+
+    window.clearTimeout(button.copyFeedbackTimeout);
+    button.classList.toggle("is-copied", wasSuccessful);
+    button.classList.toggle("has-copy-error", !wasSuccessful);
+    button.setAttribute(
+        "aria-label",
+        wasSuccessful ? `${label} kopiert` : `${label} konnte nicht kopiert werden`
+    );
+    feedback.textContent = message;
+
+    button.copyFeedbackTimeout = window.setTimeout(() => {
+        button.classList.remove("is-copied", "has-copy-error");
+        button.setAttribute("aria-label", `${label} ${button.dataset.copyValue} kopieren`);
+        feedback.textContent = "";
+    }, 2500);
+}

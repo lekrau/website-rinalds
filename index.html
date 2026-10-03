@@ -93,15 +93,49 @@
                     <p>12345 Köln</p>
                 </address>
                 <h3>Kontakt</h3>
-                <a href="https://wa.me/49221234567" target="_blank">
-                    <img src="https://up.picr.de/51339139ob.png" alt="" height="35">
-                    <p>WhatsApp</p>
-                </a>
-                <a
-                    href="mailto:hallo@steuerberatung.com?subject=Steuern%20einfach%20machen&amp;body=Hallo,%0A%0Aich%20möchte%20die%20Erstattung%20von%20Steuern%20prüfen%20...">
-                    <img src="https://up.picr.de/51339152jf.png" alt="" height="30">
-                    <p>E-Mail</p>
-                </a>
+                <div class="contact-method">
+                    <a href="https://wa.me/49221234567" target="_blank" rel="noopener noreferrer">
+                        <img src="https://up.picr.de/51339139ob.png" alt="" height="35">
+                        <p>WhatsApp</p>
+                    </a>
+                    <button type="button" class="contact-copy" data-copy-value="+49 221 234567"
+                        data-copy-label="Telefonnummer" aria-label="Telefonnummer +49 221 234567 kopieren"
+                        title="Telefonnummer kopieren">
+                        <span class="contact-copy__value">+49 221 234567</span>
+                        <svg class="contact-copy__icon contact-copy__icon--copy" aria-hidden="true"
+                            viewBox="0 0 24 24">
+                            <path d="M8 8V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-3" />
+                            <rect x="3" y="8" width="13" height="13" rx="2" />
+                        </svg>
+                        <svg class="contact-copy__icon contact-copy__icon--success" aria-hidden="true"
+                            viewBox="0 0 24 24">
+                            <path d="m5 12 4 4L19 6" />
+                        </svg>
+                        <span class="contact-copy__feedback" aria-live="polite"></span>
+                    </button>
+                </div>
+                <div class="contact-method">
+                    <a
+                        href="mailto:hallo@steuerberatung.com?subject=Steuern%20einfach%20machen&amp;body=Hallo,%0A%0Aich%20möchte%20die%20Erstattung%20von%20Steuern%20prüfen%20...">
+                        <img src="https://up.picr.de/51339152jf.png" alt="" height="30">
+                        <p>E-Mail</p>
+                    </a>
+                    <button type="button" class="contact-copy" data-copy-value="hallo@steuerberatung.com"
+                        data-copy-label="E-Mail-Adresse" aria-label="E-Mail-Adresse hallo@steuerberatung.com kopieren"
+                        title="E-Mail-Adresse kopieren">
+                        <span class="contact-copy__value">hallo@steuerberatung.com</span>
+                        <svg class="contact-copy__icon contact-copy__icon--copy" aria-hidden="true"
+                            viewBox="0 0 24 24">
+                            <path d="M8 8V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-3" />
+                            <rect x="3" y="8" width="13" height="13" rx="2" />
+                        </svg>
+                        <svg class="contact-copy__icon contact-copy__icon--success" aria-hidden="true"
+                            viewBox="0 0 24 24">
+                            <path d="m5 12 4 4L19 6" />
+                        </svg>
+                        <span class="contact-copy__feedback" aria-live="polite"></span>
+                    </button>
+                </div>
             </div>
             <!-- Calendly inline widget begin -->
             <div class="calendly-inline-widget"

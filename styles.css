@@ -344,11 +344,96 @@ main section:nth-of-type(even) {
     gap: var(--spacing__horizontal--level3);
     align-items: center;
     color: white;
-    margin-bottom: var(--spacing__vertical--level5);
 }
 
 .contact__details a:hover {
     color: var(--accent--main);
+}
+
+.contact-method {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: var(--spacing__vertical--level5);
+    gap: var(--spacing__horizontal--level3);
+}
+
+.contact-method>a {
+    width: 127px;
+    flex-shrink: 0;
+}
+
+.contact-copy {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    padding: 4px 6px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: white;
+    text-align: left;
+}
+
+.contact-copy__value {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+}
+
+.contact-copy:hover,
+.contact-copy:focus-visible {
+    color: var(--accent--main);
+}
+
+.contact-copy:focus-visible {
+    outline: 2px solid var(--accent--main);
+    outline-offset: 2px;
+}
+
+.contact-copy__icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.contact-copy__icon--success {
+    display: none;
+}
+
+.contact-copy__feedback {
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    color: var(--accent--main);
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: max-width 200ms ease, opacity 200ms ease;
+}
+
+.contact-copy.is-copied .contact-copy__icon--copy {
+    display: none;
+}
+
+.contact-copy.is-copied .contact-copy__icon--success {
+    display: block;
+}
+
+.contact-copy.is-copied .contact-copy__feedback,
+.contact-copy.has-copy-error .contact-copy__feedback {
+    max-width: 150px;
+    opacity: 1;
+}
+
+.contact-copy.has-copy-error .contact-copy__feedback {
+    color: white;
 }
 
 .calendly-inline-widget {}
