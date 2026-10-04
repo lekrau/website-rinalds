@@ -13,8 +13,8 @@
 <body>
     <header>
         <div class="header-container">
-            <img class="logo" src="https://up.picr.de/51338902qo.png" alt="Unternehmenslogo (Platzhalter)"
-                width="75" height="75">
+            <img class="logo" src="https://up.picr.de/51338902qo.png" alt="Unternehmenslogo (Platzhalter)" width="75"
+                height="75">
             <button type="button" class="hamburger-menu" aria-label="Toggle hamburger menu" aria-controls="nav"
                 aria-expanded="false">
                 <span class="bars">☰</span>
@@ -59,21 +59,39 @@
         <section id="FAQ">
             <div class="FAQ__container">
                 <div class="FAQ__container__left">
-                    <h2>FAQ</h2>
-                    <ul class="FAQ__questions">
-                        <li class="question--active">Ist das legal?</li>
-                        <li>Wie viel Geld bekomme ich?</li>
-                        <li>Wer sind wir?</li>
-                    </ul>
+                    <h2 id="FAQ-heading">FAQ</h2>
+                    <div class="FAQ__questions" role="tablist" aria-labelledby="FAQ-heading"
+                        aria-orientation="vertical">
+                        <button type="button" id="FAQ-tab-legal" role="tab" aria-selected="true"
+                            aria-controls="FAQ-panel-legal">Ist das legal?</button>
+                        <button type="button" id="FAQ-tab-refund" role="tab" aria-selected="false"
+                            aria-controls="FAQ-panel-refund" tabindex="-1">Wie viel Geld bekomme ich?</button>
+                        <button type="button" id="FAQ-tab-about" role="tab" aria-selected="false"
+                            aria-controls="FAQ-panel-about" tabindex="-1">Wer sind wir?</button>
+                    </div>
                 </div>
                 <div class="FAQ__container__right">
-                    <h3>Ist das legal?</h3>
-                    <p class="FAQ__answer">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi enim nihil pariatur perspiciatis
-                        iure, quaerat eum expedita itaque quibusdam dicta possimus accusantium distinctio facilis
-                        voluptatibus dolorem amet inventore! Aut, libero.
-                    </p>
-                    <a href="blog.html#ist-das-legal" class="button FAQ__blog">Mehr erfahren</a>
+                    <div id="FAQ-panel-legal" role="tabpanel" aria-labelledby="FAQ-tab-legal" tabindex="0">
+                        <h3>Ist das legal?</h3>
+                        <p class="FAQ__answer">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi enim
+                            nihil pariatur perspiciatis iure, quaerat eum expedita itaque quibusdam dicta possimus
+                            accusantium distinctio facilis voluptatibus dolorem amet inventore! Aut, libero.</p>
+                        <a href="blog.html#ist-das-legal" class="button FAQ__blog">Mehr erfahren</a>
+                    </div>
+                    <div id="FAQ-panel-refund" role="tabpanel" aria-labelledby="FAQ-tab-refund" tabindex="0" hidden>
+                        <h3>Wie viel Geld bekomme ich?</h3>
+                        <p class="FAQ__answer">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi enim
+                            nihil pariatur perspiciatis iure, quaerat eum expedita itaque quibusdam dicta possimus
+                            accusantium distinctio facilis voluptatibus dolorem amet inventore! Aut, libero.</p>
+                        <a href="blog.html#wie-viel-geld-bekomme-ich" class="button FAQ__blog">Mehr erfahren</a>
+                    </div>
+                    <div id="FAQ-panel-about" role="tabpanel" aria-labelledby="FAQ-tab-about" tabindex="0" hidden>
+                        <h3>Wer sind wir?</h3>
+                        <p class="FAQ__answer">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi enim
+                            nihil pariatur perspiciatis iure, quaerat eum expedita itaque quibusdam dicta possimus
+                            accusantium distinctio facilis voluptatibus dolorem amet inventore! Aut, libero.</p>
+                        <a href="blog.html#wer-sind-wir" class="button FAQ__blog">Mehr erfahren</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -101,8 +119,7 @@
                         data-copy-label="Telefonnummer" aria-label="Telefonnummer +49 221 234567 kopieren"
                         title="Telefonnummer kopieren">
                         <span class="contact-copy__value">+49 221 234567</span>
-                        <svg class="contact-copy__icon contact-copy__icon--copy" aria-hidden="true"
-                            viewBox="0 0 24 24">
+                        <svg class="contact-copy__icon contact-copy__icon--copy" aria-hidden="true" viewBox="0 0 24 24">
                             <path d="M8 8V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-3" />
                             <rect x="3" y="8" width="13" height="13" rx="2" />
                         </svg>
@@ -123,8 +140,7 @@
                         data-copy-label="E-Mail-Adresse" aria-label="E-Mail-Adresse hallo@steuerberatung.com kopieren"
                         title="E-Mail-Adresse kopieren">
                         <span class="contact-copy__value">hallo@steuerberatung.com</span>
-                        <svg class="contact-copy__icon contact-copy__icon--copy" aria-hidden="true"
-                            viewBox="0 0 24 24">
+                        <svg class="contact-copy__icon contact-copy__icon--copy" aria-hidden="true" viewBox="0 0 24 24">
                             <path d="M8 8V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-3" />
                             <rect x="3" y="8" width="13" height="13" rx="2" />
                         </svg>

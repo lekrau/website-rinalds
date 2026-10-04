@@ -72,6 +72,45 @@ navLinks.forEach(link => {
 
 window.addEventListener("resize", resetResponsiveState);
 
+// FAQ content stays in HTML so it can later be supplied by a CMS or translated.
+const faqTabs = Array.from(document.querySelectorAll(".FAQ__questions [role='tab']"));
+
+function selectFaqTab(selectedTab) {
+    faqTabs.forEach((tab) => {
+        const isSelected = tab === selectedTab;
+        tab.setAttribute("aria-selected", String(isSelected));
+        tab.tabIndex = isSelected ? 0 : -1;
+        document.getElementById(tab.getAttribute("aria-controls")).hidden = !isSelected;
+    });
+}
+
+faqTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => selectFaqTab(tab));
+    tab.addEventListener("keydown", (event) => {
+        let nextIndex;
+        switch (event.key) {
+            case "ArrowDown":
+                nextIndex = (index + 1) % faqTabs.length;
+                break;
+            case "ArrowUp":
+                nextIndex = (index - 1 + faqTabs.length) % faqTabs.length;
+                break;
+            case "Home":
+                nextIndex = 0;
+                break;
+            case "End":
+                nextIndex = faqTabs.length - 1;
+                break;
+            default:
+                return;
+        }
+
+        event.preventDefault();
+        selectFaqTab(faqTabs[nextIndex]);
+        faqTabs[nextIndex].focus({ preventScroll: true });
+    });
+});
+
 const clipboardButtons = document.querySelectorAll(".contact-copy");
 clipboardButtons.forEach((button) => {
     button.addEventListener("click", copyToClipboard);
