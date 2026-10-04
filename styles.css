@@ -17,7 +17,8 @@
     --spacing__vertical--level4: 15px;
     --spacing__vertical--level5: 10px;
     --spacing__vertical--level6: 4px;
-    --header-height: calc(48px + 2 * var(--spacing__vertical--level4));
+    --logo-size: 75px;
+    --header-height: calc(var(--logo-size) + 2 * var(--spacing__vertical--level4));
 }
 
 /* Global Elements */
@@ -50,6 +51,14 @@ a {
 
 address {
     font-style: normal;
+}
+
+.logo {
+    width: var(--logo-size);
+    height: var(--logo-size);
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 button,
@@ -93,20 +102,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo {
-    text-align: center;
-    font-weight: 900;
-}
-
-.logo span:first-of-type {
-    display: block;
-    color: var(--text--main);
-}
-
-.logo span:last-of-type {
-    color: var(--accent--main);
 }
 
 .hamburger-menu {
@@ -319,11 +314,6 @@ main section:nth-of-type(even) {
     border-radius: 15px;
     background-color: white;
     flex-shrink: 0;
-}
-
-.logo-padding img {
-    height: 75px;
-    width: 75px;
 }
 
 .contact__details h2 {
