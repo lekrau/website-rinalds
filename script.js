@@ -26,13 +26,102 @@ const options = {
     threshold: 0.55
 }
 
-const observer = new IntersectionObserver(changeNav, options);
+if (document.body.classList.contains("blog-overview")) {
+    setupOverviewNavigation();
+} else {
+    const observer = new IntersectionObserver(changeNav, options);
 
-// target the elements to be observed
-const sections = document.querySelectorAll(".hero, section, footer");
-sections.forEach((section) => {
-    observer.observe(section);
-});
+    // target the elements to be observed
+    const sections = document.querySelectorAll(".hero, section, footer");
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+}
+
+function setupOverviewNavigation() {
+    const header = document.querySelector("header");
+    const nav = header.querySelector("nav");
+
+    function targetFromHash(hash) {
+        try {
+            return document.getElementById(decodeURIComponent(hash.slice(1)));
+        } catch {
+            return null;
+        }
+    }
+
+    const items = [];
+    const links = nav.querySelectorAll("a");
+
+    for (const link of links) {
+        const url = new URL(link.href);
+        const isSamePage = url.origin === location.origin && url.pathname === location.pathname;
+        if (!isSamePage || !url.hash) continue;
+
+        const target = targetFromHash(url.hash);
+        if (target) {
+            items.push({ link, target });
+        }
+    }
+    if (!items.length) return;
+
+    function markActive(selected) {
+        items.forEach(({ link }) => {
+            const active = link === selected.link;
+            link.classList.toggle("active", active);
+            if (active) link.setAttribute("aria-current", "location");
+            else link.removeAttribute("aria-current");
+        });
+    }
+
+    function hashItem() {
+        const target = targetFromHash(location.hash);
+        return items.find((item) => item.target === target || (target && item.target.contains(target)));
+    }
+
+    function updateActive() {
+        const scrollRange = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollRange <= 1) {
+            markActive(hashItem() || items[0]);
+            return;
+        }
+        const readingLine = header.getBoundingClientRect().bottom + 26;
+        let selected = items[0];
+        items.forEach((item) => {
+            if (item.target.getBoundingClientRect().top <= readingLine) selected = item;
+        });
+        // Short desktop pages may reach the bottom before the last anchor can align.
+        if (window.scrollY > 0 && window.scrollY >= scrollRange - 1) selected = items.at(-1);
+        markActive(selected);
+    }
+
+    let scheduled = false;
+    function scheduleUpdate() {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(() => {
+            scheduled = false;
+            if (!nav.classList.contains("responsive")) updateActive();
+        });
+    }
+
+    new ResizeObserver(() => {
+        // The expanded mobile menu is an overlay, not the normal header height.
+        if (nav.classList.contains("responsive")) return;
+        document.body.style.setProperty("--header-height", `${header.getBoundingClientRect().height}px`);
+        scheduleUpdate();
+    }).observe(header);
+    items.forEach((item) => item.link.addEventListener("click", () => markActive(item)));
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    window.addEventListener("hashchange", () => {
+        const item = hashItem();
+        if (item) markActive(item);
+        else scheduleUpdate();
+    });
+    window.addEventListener("pageshow", scheduleUpdate);
+    markActive(hashItem() || items[0]);
+}
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function toggleHamburgerMenu() {
@@ -57,7 +146,8 @@ function closeHamburgerMenu() {
 }
 
 function resetResponsiveState() {
-    if (window.innerWidth > 500) {
+    const menuBreakpoint = document.body.classList.contains("knowledge-page") ? 700 : 500;
+    if (window.innerWidth > menuBreakpoint) {
         closeHamburgerMenu();
     }
 }
@@ -71,6 +161,13 @@ navLinks.forEach(link => {
 });
 
 window.addEventListener("resize", resetResponsiveState);
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && hamburgerMenuButton.getAttribute("aria-expanded") === "true") {
+        closeHamburgerMenu();
+        hamburgerMenuButton.focus();
+    }
+});
 
 // FAQ content stays in HTML so it can later be supplied by a CMS or translated.
 const faqTabs = Array.from(document.querySelectorAll(".FAQ__questions [role='tab']"));

@@ -4,22 +4,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Blog | Steuerwissen</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog.css">
+    <script src="script.js" defer></script>
 </head>
 
-<body>
-    <h1>TBD</h1>
-    <a href="index.html">Zurück</a>
-    <style>
-        * {
-            text-align: center;
-        }
-
-        h1 {
-            margin-top: 40vh;
-            font-size: 100px;
-        }
-    </style>
+<body class="knowledge-page blog-overview">
+    <header class="knowledge-header">
+        <div class="header-container">
+            <a class="knowledge-brand" href="index.html" aria-label="Zur Startseite">
+                <img class="logo" src="https://up.picr.de/51338902qo.png" alt="" width="75" height="75">
+            </a>
+            <button type="button" class="hamburger-menu" aria-label="Navigation öffnen oder schließen"
+                aria-controls="nav" aria-expanded="false"><span class="bars" aria-hidden="true">☰</span></button>
+        </div>
+        <nav id="nav" aria-label="Hauptnavigation">
+            <a href="index.html">Startseite</a>
+            <a href="blog.html#steuerwissen">Überblick</a>
+            <a href="blog.html#beitraege">Beiträge</a>
+        </nav>
+        <div class="CTA-bar"><a href="index.html#contact" class="button">Kontakt aufnehmen</a></div>
+    </header>
+    <main class="knowledge-main">
+        <div class="overview-layout">
+            <div class="overview-content">
+                <div class="overview-intro">
+                    <h1 id="steuerwissen">Steuerwissen</h1>
+                    <h2>Verständlich informiert</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus aliquam corporis soluta quam,
+                        reiciendis voluptatem necessitatibus nisi voluptates fugit animi eligendi nostrum voluptatibus?
+                        Maxime quis veritatis ducimus sequi voluptatem repudiandae.
+                    </p>
+                    <p>Tempore illum voluptates doloribus asperiores quo dignissimos doloremque alias eum accusantium
+                        voluptas similique, architecto ratione sint nostrum incidunt velit pariatur magni! Vitae.</p>
+                </div>
+                <section id="beitraege" class="knowledge-section overview-posts" aria-labelledby="beitraege-heading">
+                    <h2 id="beitraege-heading">Beiträge</h2>
+                    <div class="post-grid">
+                        <article class="article-preview">
+                            <a class="article-preview__image" href="tbd.html" tabindex="-1" aria-hidden="true">
+                                <img src="https://up.picr.de/51383300at.png" alt="" width="480" height="300">
+                            </a>
+                            <h3><a href="tbd.html">Lorem ipsum dolor sit amet consectetur</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <a class="article-read" href="tbd.html">Artikel
+                                lesen</a>
+                        </article>
+                        <article class="article-preview">
+                            <a class="article-preview__image" href="tbd.html" tabindex="-1" aria-hidden="true"><img
+                                    src="https://up.picr.de/51383300at.png" alt="" width="480" height="300"></a>
+                            <h3><a href="tbd.html">Lorem ipsum dolor sit amet</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua.</p>
+                            <a class="article-read" href="tbd.html">Artikel
+                                lesen</a>
+                        </article>
+                        <article class="article-preview">
+                            <a class="article-preview__image" href="tbd.html" tabindex="-1" aria-hidden="true"><img
+                                    src="https://up.picr.de/51383300at.png" alt="" width="480" height="300"></a>
+                            <h3><a href="tbd.html">Consectetur adipiscing elit sed do eiusmod</a></h3>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                commodo consequat.</p>
+                            <a class="article-read" href="tbd.html">Artikel
+                                lesen</a>
+                        </article>
+                    </div>
+                </section>
+            </div>
+            <aside class="overview-sidebar" aria-labelledby="ansprechpartner-heading">
+                <h2 id="ansprechpartner-heading">Ihr Ansprechpartner</h2>
+                <img class="advisor-portrait" src="https://up.picr.de/51383293hs.png"
+                    alt="Porträt-Platzhalter für Rinalds" width="320" height="360">
+                <h3>Rinalds Rozenfelds</h3>
+                <p>Steuerberater</p>
+                <address class="advisor-contact">
+                    <div class="contact-method">
+                        <a href="https://wa.me/49221234567" target="_blank" rel="noopener noreferrer">
+                            <img class="advisor-contact__logo" src="https://up.picr.de/51339139ob.png" alt="" width="20"
+                                height="20">
+                            <span>WhatsApp</span>
+                        </a>
+                        <button type="button" class="contact-copy" data-copy-value="+49 221 234567"
+                            data-copy-label="Telefonnummer" aria-label="Telefonnummer +49 221 234567 kopieren"
+                            title="Telefonnummer kopieren">
+                            <span class="contact-copy__value">+49 221 234567</span>
+                            <svg class="contact-copy__icon contact-copy__icon--copy" aria-hidden="true"
+                                viewBox="0 0 24 24">
+                                <path d="M8 8V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-3" />
+                                <rect x="3" y="8" width="13" height="13" rx="2" />
+                            </svg>
+                            <svg class="contact-copy__icon contact-copy__icon--success" aria-hidden="true"
+                                viewBox="0 0 24 24">
+                                <path d="m5 12 4 4L19 6" />
+                            </svg>
+                            <span class="contact-copy__feedback" aria-live="polite"></span>
+                        </button>
+                    </div>
+                    <div class="contact-method">
+                        <a
+                            href="mailto:hallo@steuerberatung.com?subject=Steuern%20einfach%20machen&amp;body=Hallo,%0A%0Aich%20möchte%20die%20Erstattung%20von%20Steuern%20prüfen%20...">
+                            <img class="advisor-contact__logo advisor-contact__logo--email"
+                                src="https://up.picr.de/51339152jf.png" alt="" width="20" height="20">
+                            <span>E-Mail</span>
+                        </a>
+                        <button type="button" class="contact-copy" data-copy-value="hallo@steuerberatung.com"
+                            data-copy-label="E-Mail-Adresse"
+                            aria-label="E-Mail-Adresse hallo@steuerberatung.com kopieren"
+                            title="E-Mail-Adresse kopieren">
+                            <span class="contact-copy__value">hallo@steuerberatung.com</span>
+                            <svg class="contact-copy__icon contact-copy__icon--copy" aria-hidden="true"
+                                viewBox="0 0 24 24">
+                                <path d="M8 8V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-3" />
+                                <rect x="3" y="8" width="13" height="13" rx="2" />
+                            </svg>
+                            <svg class="contact-copy__icon contact-copy__icon--success" aria-hidden="true"
+                                viewBox="0 0 24 24">
+                                <path d="m5 12 4 4L19 6" />
+                            </svg>
+                            <span class="contact-copy__feedback" aria-live="polite"></span>
+                        </button>
+                    </div>
+                </address>
+            </aside>
+        </div>
+    </main>
+    <footer class="knowledge-footer">
+        <div class="footer__legal">
+            <span>Impressum</span>
+            <span>Datenschutz</span>
+        </div>
+    </footer>
 </body>
 
 </html>
