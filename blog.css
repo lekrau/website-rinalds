@@ -135,6 +135,13 @@
     filter: brightness(0);
     opacity: 0.65;
 }
+.blog-overview .advisor-contact__logo--calendar {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
 .blog-overview .advisor-contact .contact-copy { color: var(--text--main); font-size: 14px; padding: 4px 0; max-width: 100%; }
 .blog-overview .advisor-contact .contact-copy__value { overflow-wrap: anywhere; }
 .blog-overview .advisor-contact .contact-method > a:hover,
