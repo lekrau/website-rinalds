@@ -181,6 +181,30 @@ function selectFaqTab(selectedTab) {
     });
 }
 
+function selectFaqFromHash() {
+    let targetId;
+    try {
+        targetId = decodeURIComponent(window.location.hash.slice(1));
+    } catch {
+        return;
+    }
+    const selectedTab = faqTabs.find((tab) =>
+        tab.id === targetId || tab.getAttribute("aria-controls") === targetId
+    );
+    if (!selectedTab) return;
+
+    selectFaqTab(selectedTab);
+    // Show the questions together with the answer, below the fixed header.
+    requestAnimationFrame(() => {
+        document.getElementById("FAQ").scrollIntoView({ block: "start" });
+    });
+}
+
+selectFaqFromHash();
+window.addEventListener("hashchange", selectFaqFromHash);
+// Image loading and the browser's initial fragment jump can change the position.
+window.addEventListener("load", selectFaqFromHash);
+
 faqTabs.forEach((tab, index) => {
     tab.addEventListener("click", () => selectFaqTab(tab));
     tab.addEventListener("keydown", (event) => {
