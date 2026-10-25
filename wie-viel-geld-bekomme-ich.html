@@ -3,18 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wie viel Geld bekomme ich? | TBD</title>
+    <title>Wie viel Geld bekomme ich? </title>
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="tbd.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="article.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
-    <nav class="breadcrumbs" aria-label="Brotkrümelnavigation">
-        <ol>
-            <li><a href="index.html">Startseite</a></li>
-            <li><a href="blog.html">Fragen &amp; Wissen</a></li>
-            <li><span aria-current="page">Wie viel Geld bekomme ich?</span></li>
-        </ol>
-    </nav>
-    <main><h1>TBD</h1></main>
+<body class="knowledge-page article-page">
+    <a class="skip-link" href="#inhalt">Zum Inhalt</a>
+    <header class="knowledge-header">
+        <div class="header-container">
+            <a class="knowledge-brand" href="index.html" aria-label="Zur Startseite">
+                <img class="logo" src="https://up.picr.de/51338902qo.png" alt="" width="75" height="75">
+            </a>
+            <button type="button" class="hamburger-menu" aria-label="Navigation öffnen oder schließen"
+                aria-controls="nav" aria-expanded="false"><span class="bars" aria-hidden="true">☰</span></button>
+        </div>
+        <nav id="nav" aria-label="Hauptnavigation">
+            <a href="index.html">Startseite</a>
+            <a href="blog.html#steuerwissen">Überblick</a>
+            <a href="blog.html#beitraege">Beiträge</a>
+        </nav>
+        <div class="CTA-bar"><a href="index.html#contact" class="button">Kontakt aufnehmen</a></div>
+    </header>
+    <main id="inhalt" class="knowledge-main" tabindex="-1">
+        <nav class="breadcrumbs" aria-label="Brotkrümelnavigation"><ol><li><a href="index.html">Startseite</a></li><li><a href="blog.html">Fragen &amp; Wissen</a></li><li><span aria-current="page">Wie viel Geld bekomme ich?</span></li></ol></nav>
+        <article class="editorial-article" aria-labelledby="artikel-titel">
+            <div class="article-intro">
+            <div class="article-heading">
+                <h1 id="artikel-titel">Wie viel Geld bekomme ich?</h1>
+                <p class="lead">Wie eine mögliche Steuererstattung zustande kommt und welche Angaben für die Einordnung wichtig sind, soll dieser künftige Beitrag Schritt für Schritt erläutern.</p>
+            </div>
+            <figure class="video-placeholder" id="video">
+                <a class="video-preview" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube-Startseite öffnen (neuer Tab)">
+                    <span class="video-symbol" aria-hidden="true">▷</span>
+                    <span>Steuererstattung verstehen<small>Videovorschau</small></span>
+                </a>
+                <figcaption>Hier ist eine ergänzende Erklärung von Rinalds vorgesehen. Die Vorschau öffnet vorläufig die YouTube-Startseite in einem neuen Tab.</figcaption>
+            </figure>
+            </div>
+            <div class="article-layout">
+                <nav class="article-toc" aria-labelledby="toc-heading">
+                    <h2 id="toc-heading">In diesem Beitrag</h2>
+                    <ol>
+                        <li><a href="#ausgangsfrage">1. Die Ausgangsfrage</a>
+                            <ol>
+                                <li><a href="#begriffe">1.1. Welche Begriffe werden erläutert?</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="#vergleich">2. Ein Vergleich zur Orientierung</a>
+                            <ol>
+                                <li><a href="#bausteine">2.1. Die Bausteine im Überblick</a></li>
+                                <li><a href="#ergebnis">2.2. Das Ergebnis einordnen</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="#einordnung">3. Den eigenen Fall einordnen</a></li>
+                        <li><a href="#unterlagen">4. Welche Angaben und Unterlagen wichtig werden</a>
+                            <ol>
+                                <li><a href="#angaben">4.1. Die Ausgangssituation zusammenstellen</a></li>
+                                <li><a href="#offene-fragen">4.2. Offene Fragen festhalten</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="#ablauf">5. Vom ersten Gespräch zur Einordnung</a></li>
+                        <li><a href="#erstattungshoehe">6. Die mögliche Erstattungshöhe nachvollziehen</a></li>
+                        <li><a href="#naechster-schritt">7. Der nächste Schritt</a></li>
+                        <li><a href="#artikel-faq">8. Häufig gestellte Fragen zur Steuererstattung</a>
+                            <ol>
+                                <li><a href="#faq-hoehe">8.1. Wie viel Geld kann ich zurückbekommen?</a></li>
+                                <li><a href="#faq-angaben">8.2. Welche Angaben werden für eine Einschätzung benötigt?</a></li>
+                                <li><a href="#faq-unterlagen">8.3. Welche Unterlagen sollte ich bereithalten?</a></li>
+                                <li><a href="#faq-dauer">8.4. Wie lange dauert die Prüfung einer möglichen Erstattung?</a></li>
+                                <li><a href="#faq-ergebnis">8.5. Wie wird mir das Ergebnis erklärt?</a></li>
+                                <li><a href="#faq-termin">8.6. Wie kann ich einen Termin vereinbaren?</a></li>
+                            </ol>
+                        </li>
+                    </ol>
+                </nav>
+                <div class="article-body">
+                    <section id="ausgangsfrage" class="knowledge-section">
+                        <h2>1. Die Ausgangsfrage</h2>
+                        <p>„Warum bekomme ich Geld zurück?“ Bevor Zahlen ins Spiel kommen, soll der künftige Beitrag die Begriffe und die Ausgangssituation verständlich erklären. Rinalds wird hier die fachliche Einleitung ergänzen.</p>
+                        <p>Die Erläuterung wird den Weg von einer allgemeinen Frage zur persönlichen Situation beschreiben. Der künftige Fachtext wird erläutern, welche Voraussetzungen dabei eine Rolle spielen.</p>
+                        <h3 id="begriffe">1.1. Welche Begriffe werden erläutert?</h3>
+                        <p>Hier ist Raum für kurze Definitionen, Beispiele und Verweise. Die Redaktion wird die notwendigen Begriffe auswählen und mit nachvollziehbaren Quellen ergänzen.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu.</p>
+                        <p>leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor.</p>
+                    </section>
+                    <section id="vergleich" class="knowledge-section">
+                        <h2>2. Ein Vergleich zur Orientierung</h2>
+                        <p>Eine Tabelle kann Zusammenhänge auf einen Blick zugänglich machen. Die folgenden Bausteine zeigen, welche Leitfragen der künftige Beitrag aufgreifen wird.</p>
+                        <h3 id="bausteine">2.1. Die Bausteine im Überblick</h3>
+                        <div class="table-scroll" role="region" aria-labelledby="vergleich-caption" tabindex="0">
+                            <table>
+                                <caption id="vergleich-caption">Bausteine der geplanten Erläuterung</caption>
+                                <thead><tr><th scope="col">Baustein</th><th scope="col">Leitfrage im Fachtext</th><th scope="col">Inhalt</th></tr></thead>
+                                <tbody>
+                                    <tr><th scope="row">Ausgangssituation</th><td>Welche Angaben liegen vor?</td><td>Noch zu ergänzen</td></tr>
+                                    <tr><th scope="row">Vergleich</th><td>Was wird gegenübergestellt?</td><td>Noch fachlich zu erläutern</td></tr>
+                                    <tr><th scope="row">Ergebnis</th><td>Wie ist das Ergebnis einzuordnen?</td><td>Noch zu erläutern</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h3 id="ergebnis">2.2. Das Ergebnis einordnen</h3>
+                        <p>Der spätere Beitrag kann hier ein Rechenbeispiel aufnehmen. Annahmen und Grenzen sollen dabei unmittelbar am Beispiel erklärt werden.</p>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do.</p>
+                        <p>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                    </section>
+                    <section id="einordnung" class="knowledge-section">
+                        <h2>3. Den eigenen Fall einordnen</h2>
+                        <p>Ein allgemeiner Beitrag kann das persönliche Gespräch vorbereiten. Für dieses Artikelformat sind beispielsweise folgende Fragen vorgesehen:</p>
+                        <ul>
+                            <li>Welche Ausgangssituation soll besprochen werden?</li>
+                            <li>Welche Angaben werden für die Einordnung benötigt?</li>
+                            <li>Welche Punkte sind im Gespräch noch zu klären?</li>
+                        </ul>
+                        <p>Für Ihre persönliche Anfrage finden Sie die <a href="index.html#contact">Kontaktmöglichkeiten auf der Startseite</a>.</p>
+                        <p>irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        <p>nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut.</p>
+                    </section>
+                    <aside class="article-contact" aria-labelledby="kontakt-fragen">
+                        <h2 id="kontakt-fragen">Haben Sie Fragen zu Ihrer möglichen Steuererstattung?</h2>
+                        <p>Schreiben Sie uns oder vereinbaren Sie einen Termin.</p>
+                        <div class="article-contact__links">
+                            <a href="https://wa.me/49221234567" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                            <a href="mailto:hallo@steuerberatung.com?subject=Steuern%20einfach%20machen&amp;body=Hallo,%0A%0Aich%20möchte%20die%20Erstattung%20von%20Steuern%20prüfen%20...">E-Mail</a>
+                            <a class="button" href="index.html#contact">Termin buchen</a>
+                        </div>
+                    </aside>
+                    <section id="unterlagen" class="knowledge-section">
+                        <h2>4. Welche Angaben und Unterlagen wichtig werden</h2>
+                        <p>Der künftige Beitrag wird beschreiben, welche Angaben das persönliche Gespräch vorbereiten und wie die Unterlagen übersichtlich zusammengestellt werden können.</p>
+                        <h3 id="angaben">4.1. Die Ausgangssituation zusammenstellen</h3>
+                        <p>Hier wird Rinalds erläutern, welche Informationen zur persönlichen Situation im Gespräch aufgegriffen werden.</p>
+                        <h3 id="offene-fragen">4.2. Offene Fragen festhalten</h3>
+                        <p>Dieser Unterabschnitt wird zeigen, wie sich offene Punkte vor dem Termin sammeln lassen.</p>
+                        <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                        <p>eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.</p>
+                    </section>
+                    <section id="ablauf" class="knowledge-section">
+                        <h2>5. Vom ersten Gespräch zur Einordnung</h2>
+                        <p>Hier wird der spätere Fachtext den Ablauf von der ersten Anfrage bis zur individuellen Einordnung beschreiben. Ein Verweis auf die <a href="index.html#process">Schritte auf der Startseite</a> ergänzt die Darstellung.</p>
+                        <p>posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.</p>
+                        <p>est laborum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                    </section>
+                    <aside class="article-contact" aria-labelledby="kontakt-vergleich">
+                        <h2 id="kontakt-vergleich">Möchten Sie Ihre persönliche Situation besprechen?</h2>
+                        <p>Schreiben Sie uns oder vereinbaren Sie einen Termin.</p>
+                        <div class="article-contact__links">
+                            <a href="https://wa.me/49221234567" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                            <a href="mailto:hallo@steuerberatung.com?subject=Steuern%20einfach%20machen&amp;body=Hallo,%0A%0Aich%20möchte%20die%20Erstattung%20von%20Steuern%20prüfen%20...">E-Mail</a>
+                            <a class="button" href="index.html#contact">Termin buchen</a>
+                        </div>
+                    </aside>
+                    <section id="erstattungshoehe" class="knowledge-section">
+                        <h2>6. Die mögliche Erstattungshöhe nachvollziehen</h2>
+                        <p>Rinalds wird hier erläutern, wie die zuvor besprochenen Angaben zusammengeführt werden und wie eine mögliche Erstattung im persönlichen Gespräch nachvollziehbar erklärt werden kann.</p>
+                        <p>leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                        <p>Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Integer posuere erat a ante venenatis dapibus posuere.</p>
+                    </section>
+                    <section id="naechster-schritt" class="knowledge-section">
+                        <h2>7. Der nächste Schritt</h2>
+                        <p>Der spätere Fachtext wird hier die wichtigsten Gedanken zusammenführen. Zur <a href="index.html#FAQ">Kurzantwort in den FAQ</a> gelangen Sie auf der Startseite.</p>
+                        <p>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem.</p>
+                        <p>ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo.</p>
+                    </section>
+                    <section id="artikel-faq" class="knowledge-section">
+                        <h2>8. Häufig gestellte Fragen zur Steuererstattung</h2>
+                        <h3 id="faq-hoehe">8.1. Wie viel Geld kann ich zurückbekommen?</h3>
+                        <p>Die künftige Antwort wird erläutern, wie die Höhe einer möglichen Erstattung anhand der persönlichen Situation eingeordnet wird.</p>
+                        <h3 id="faq-angaben">8.2. Welche Angaben werden für eine Einschätzung benötigt?</h3>
+                        <p>Hier wird Rinalds die Angaben beschreiben, die im ersten Gespräch zur Sprache kommen sollen.</p>
+                        <h3 id="faq-unterlagen">8.3. Welche Unterlagen sollte ich bereithalten?</h3>
+                        <p>Die spätere Antwort wird die Zusammenstellung der Unterlagen erläutern und auf den entsprechenden Artikelabschnitt verweisen.</p>
+                        <h3 id="faq-dauer">8.4. Wie lange dauert die Prüfung einer möglichen Erstattung?</h3>
+                        <p>Hier ist eine Erläuterung des Ablaufs und der Faktoren vorgesehen, die für die zeitliche Einordnung wichtig sind.</p>
+                        <h3 id="faq-ergebnis">8.5. Wie wird mir das Ergebnis erklärt?</h3>
+                        <p>Die künftige Antwort wird beschreiben, wie das Ergebnis und die nächsten Schritte im persönlichen Gespräch erläutert werden.</p>
+                        <h3 id="faq-termin">8.6. Wie kann ich einen Termin vereinbaren?</h3>
+                        <p>Sie können über den <a href="index.html#contact">Kontaktbereich auf der Startseite</a> einen Termin anfragen oder uns per WhatsApp beziehungsweise E-Mail schreiben.</p>
+                    </section>
+                    <nav class="article-navigation" aria-label="Weiterführende Navigation">
+                        <a href="blog.html#beitraege">← Zur Beitragsübersicht</a>
+                        <a href="#artikel-titel">Zum Artikelanfang ↑</a>
+                    </nav>
+                </div>
+            </div>
+            <aside class="overview-sidebar" aria-labelledby="ansprechpartner-heading">
+                <h2 id="ansprechpartner-heading">Ihr Ansprechpartner</h2>
+                <img class="advisor-portrait" src="https://up.picr.de/51383293hs.png"
+                    alt="Porträt-Platzhalter für Rinalds" width="320" height="360">
+                <h3>Rinalds Rozenfelds</h3>
+                <p>Position</p>
+                <address class="advisor-contact">
+                    <div class="contact-method">
+                        <a href="https://wa.me/49221234567" target="_blank" rel="noopener noreferrer">
+                            <img class="advisor-contact__logo" src="https://up.picr.de/51339139ob.png" alt="" width="20"
+                                height="20">
+                            <span>WhatsApp</span>
+                        </a>
+                        <button type="button" class="contact-copy" data-copy-value="+49 221 234567"
+                            data-copy-label="Telefonnummer" aria-label="Telefonnummer +49 221 234567 kopieren"
+                            title="Telefonnummer kopieren">
+                            <span class="contact-copy__value">+49 221 234567</span>
+                            <svg class="contact-copy__icon contact-copy__icon--copy" aria-hidden="true"
+                                viewBox="0 0 24 24">
+                                <path d="M8 8V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-3" />
+                                <rect x="3" y="8" width="13" height="13" rx="2" />
+                            </svg>
+                            <svg class="contact-copy__icon contact-copy__icon--success" aria-hidden="true"
+                                viewBox="0 0 24 24">
+                                <path d="m5 12 4 4L19 6" />
+                            </svg>
+                            <span class="contact-copy__feedback" aria-live="polite"></span>
+                        </button>
+                    </div>
+                    <div class="contact-method">
+                        <a
+                            href="mailto:hallo@steuerberatung.com?subject=Steuern%20einfach%20machen&amp;body=Hallo,%0A%0Aich%20möchte%20die%20Erstattung%20von%20Steuern%20prüfen%20...">
+                            <img class="advisor-contact__logo advisor-contact__logo--email"
+                                src="https://up.picr.de/51339152jf.png" alt="" width="20" height="20">
+                            <span>E-Mail</span>
+                        </a>
+                        <button type="button" class="contact-copy" data-copy-value="hallo@steuerberatung.com"
+                            data-copy-label="E-Mail-Adresse"
+                            aria-label="E-Mail-Adresse hallo@steuerberatung.com kopieren"
+                            title="E-Mail-Adresse kopieren">
+                            <span class="contact-copy__value">hallo@steuerberatung.com</span>
+                            <svg class="contact-copy__icon contact-copy__icon--copy" aria-hidden="true"
+                                viewBox="0 0 24 24">
+                                <path d="M8 8V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-3" />
+                                <rect x="3" y="8" width="13" height="13" rx="2" />
+                            </svg>
+                            <svg class="contact-copy__icon contact-copy__icon--success" aria-hidden="true"
+                                viewBox="0 0 24 24">
+                                <path d="m5 12 4 4L19 6" />
+                            </svg>
+                            <span class="contact-copy__feedback" aria-live="polite"></span>
+                        </button>
+                    </div>
+                    <div class="contact-method">
+                        <a href="index.html#contact">
+                            <svg class="advisor-contact__logo advisor-contact__logo--calendar" aria-hidden="true"
+                                viewBox="0 0 24 24">
+                                <rect x="3" y="5" width="18" height="16" rx="2" />
+                                <path d="M16 3v4M8 3v4M3 11h18" />
+                            </svg>
+                            <span>Termin buchen</span>
+                        </a>
+                    </div>
+                </address>
+            </aside>
+        </article>
+    </main>
+    <footer class="knowledge-footer">
+        <a href="index.html">← Zur Startseite</a>
+        <span>Wissensbereich</span>
+        <a href="index.html#contact">Kontakt aufnehmen</a>
+    </footer>
 </body>
 </html>
