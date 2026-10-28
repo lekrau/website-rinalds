@@ -146,7 +146,7 @@ function closeHamburgerMenu() {
 }
 
 function resetResponsiveState() {
-    const menuBreakpoint = document.body.classList.contains("knowledge-page") ? 700 : 500;
+    const menuBreakpoint = 700;
     if (window.innerWidth > menuBreakpoint) {
         closeHamburgerMenu();
     }

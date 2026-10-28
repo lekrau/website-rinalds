@@ -134,7 +134,7 @@ header .button {
     border-radius: 18px;
 }
 
-@media screen and (width <=500px) {
+@media screen and (width <=700px) {
     .header-container {
         width: 100%;
     }
@@ -173,6 +173,44 @@ header .button {
 
 header nav a {
     padding: 0 0.5vw;
+}
+
+header nav:has(.nav-blog) {
+    align-items: center;
+}
+
+header nav .nav-blog {
+    white-space: nowrap;
+    word-spacing: 4px;
+    margin-inline-start: var(--spacing__horizontal--level3);
+    padding-inline-start: calc(2 * var(--spacing__horizontal--level3));
+    border-inline-start: 1px solid #dce4e5;
+    font-weight: 600;
+}
+
+header nav .nav-blog:hover,
+header nav .nav-blog:focus-visible {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 4px;
+}
+
+header nav .nav-blog:focus-visible {
+    outline: 2px solid var(--text--main);
+    outline-offset: 3px;
+}
+
+header nav.responsive .nav-blog {
+    margin-inline-start: 0;
+    margin-block-start: var(--spacing__vertical--level5);
+    padding-block-start: var(--spacing__vertical--level3);
+    padding-inline-start: 0.5vw;
+    border-inline-start: 0;
+    border-block-start: 1px solid #dce4e5;
+}
+
+header nav.responsive:has(.nav-blog) {
+    align-items: stretch;
 }
 
 header nav:not(.responsive) a.active {
