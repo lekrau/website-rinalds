@@ -47,8 +47,8 @@
 .blog-overview .knowledge-header a:not(.nav-page-switch):hover { text-decoration: none; }
 .blog-overview #steuerwissen,
 .blog-overview #beitraege { scroll-margin-top: calc(var(--header-height) + 25px); }
-/* Legal pages do not exist yet; mirror the landing page's plain labels. */
-.blog-overview .footer__legal { display: flex; flex-wrap: wrap; gap: 24px; color: var(--editorial-muted); }
+/* Compact legal navigation shared by the knowledge and legal pages. */
+.knowledge-page .footer__legal { display: flex; flex-wrap: wrap; gap: 24px; color: var(--editorial-muted); }
 .blog-overview .overview-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 240px;
