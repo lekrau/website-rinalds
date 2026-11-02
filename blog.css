@@ -37,14 +37,14 @@
     .knowledge-page:has(.responsive) { overflow: hidden; }
     .knowledge-page header:has(.responsive) { height: 100dvh; align-items: flex-start; align-content: flex-start; }
     .knowledge-page header nav.responsive { display: flex; flex-direction: column; justify-content: flex-start; height: auto; width: 100%; gap: 20px; }
-    .knowledge-page header nav.responsive a { padding: 10px 0; }
+    .knowledge-page header nav.responsive a:not(.nav-page-switch) { padding: 10px 0; }
 }
 
 /* Match the landing page's logo-only header and left-aligned navigation. */
 .blog-overview header nav { justify-content: flex-start; }
 .blog-overview .knowledge-header nav a { border-bottom: 2px solid transparent; }
 .blog-overview .knowledge-header nav a.active { border-bottom-color: var(--accent--main); }
-.blog-overview .knowledge-header a:hover { text-decoration: none; }
+.blog-overview .knowledge-header a:not(.nav-page-switch):hover { text-decoration: none; }
 .blog-overview #steuerwissen,
 .blog-overview #beitraege { scroll-margin-top: calc(var(--header-height) + 25px); }
 /* Legal pages do not exist yet; mirror the landing page's plain labels. */

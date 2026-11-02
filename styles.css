@@ -175,11 +175,11 @@ header nav a {
     padding: 0 0.5vw;
 }
 
-header nav:has(.nav-blog) {
+header nav:has(.nav-page-switch) {
     align-items: center;
 }
 
-header nav .nav-blog {
+header nav .nav-page-switch {
     white-space: nowrap;
     word-spacing: 4px;
     margin-inline-start: var(--spacing__horizontal--level3);
@@ -188,19 +188,19 @@ header nav .nav-blog {
     font-weight: 600;
 }
 
-header nav .nav-blog:hover,
-header nav .nav-blog:focus-visible {
+header nav .nav-page-switch:hover,
+header nav .nav-page-switch:focus-visible {
     text-decoration: underline;
     text-decoration-skip-ink: none;
     text-underline-offset: 4px;
 }
 
-header nav .nav-blog:focus-visible {
+header nav .nav-page-switch:focus-visible {
     outline: 2px solid var(--text--main);
     outline-offset: 3px;
 }
 
-header nav.responsive .nav-blog {
+header nav.responsive .nav-page-switch {
     margin-inline-start: 0;
     margin-block-start: var(--spacing__vertical--level5);
     padding-block-start: var(--spacing__vertical--level3);
@@ -209,7 +209,7 @@ header nav.responsive .nav-blog {
     border-block-start: 1px solid #dce4e5;
 }
 
-header nav.responsive:has(.nav-blog) {
+header nav.responsive:has(.nav-page-switch) {
     align-items: stretch;
 }
 
