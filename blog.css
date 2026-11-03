@@ -134,10 +134,6 @@
 }
 
 @media (width <=600px) {
-    .blog-overview .knowledge-header {
-        gap: 20px;
-    }
-
     .blog-overview h1 {
         font-size: 30px;
     }

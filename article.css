@@ -294,10 +294,6 @@
 }
 
 @media (width <=600px) {
-    .article-page .knowledge-header {
-        gap: 20px;
-    }
-
     .article-page .article-contact {
         padding: 20px;
     }

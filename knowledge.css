@@ -17,7 +17,6 @@
     position: sticky;
     top: 0;
     width: 100%;
-    gap: 50px;
     flex-wrap: nowrap;
     border-bottom: 1px solid var(--editorial-line);
 }
@@ -71,14 +70,7 @@
         flex-wrap: wrap;
     }
 
-    .knowledge-page .header-container {
-        width: 100%;
-    }
-
     .knowledge-page .hamburger-menu {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         min-width: 44px;
         min-height: 44px;
         transition: none;
@@ -88,25 +80,12 @@
         transform: none;
     }
 
-    .knowledge-page .site-header nav,
-    .knowledge-page .site-header .CTA-bar {
-        display: none;
-    }
-
-    .knowledge-page:has(.site-header nav.responsive) {
-        overflow: hidden;
-    }
-
     .knowledge-page .site-header:has(nav.responsive) {
         height: 100dvh;
-        align-items: flex-start;
         align-content: flex-start;
     }
 
     .knowledge-page .site-header nav.responsive {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
         height: auto;
         width: 100%;
         gap: 20px;
@@ -117,11 +96,13 @@
     }
 }
 
-/* Match the landing page's logo-only header and left-aligned navigation. */
-.knowledge-page .site-header nav {
-    justify-content: flex-start;
+@media (width <=600px) {
+    .knowledge-page .knowledge-header {
+        gap: 20px;
+    }
 }
 
+/* Content pages reserve space for the active navigation underline. */
 .knowledge-page .knowledge-header nav a {
     border-bottom: 2px solid transparent;
 }
