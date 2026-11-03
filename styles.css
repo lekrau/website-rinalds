@@ -514,7 +514,43 @@ main section:nth-of-type(even) {
     color: white;
 }
 
-.calendly-inline-widget {}
+.contact__booking {
+    flex-basis: 320px;
+    min-width: 320px;
+}
+
+.contact__booking-fallback {
+    padding: var(--spacing__vertical--level3);
+    border-radius: 15px;
+    background-color: #f2f3ee;
+    max-width: 520px;
+}
+
+.contact__booking-fallback h3 {
+    margin-top: 0;
+}
+
+.contact__booking-fallback a {
+    display: inline-block;
+    margin-top: var(--spacing__vertical--level5);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.contact__booking-fallback a:focus-visible {
+    outline: 2px solid var(--text--main);
+    outline-offset: 3px;
+}
+
+.calendly-inline-widget {
+    min-width: 320px;
+    height: 750px;
+}
+
+/* Keep failed embeds hidden even if Calendly adds inline display styles. */
+.calendly-inline-widget[hidden] {
+    display: none !important;
+}
 
 .calendly-inline-widget iframe {
     display: block;

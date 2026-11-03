@@ -1,5 +1,47 @@
 "use strict";
 
+setupCalendly();
+
+function setupCalendly() {
+    const widget = document.querySelector(".calendly-inline-widget");
+    const fallback = document.querySelector(".contact__booking-fallback");
+    if (!widget || !fallback) return;
+
+    // Without JavaScript the HTML fallback stays visible; hide it while loading.
+    fallback.hidden = true;
+    widget.hidden = false;
+    const timeout = window.setTimeout(() => {
+        widget.hidden = true;
+        fallback.hidden = false;
+    }, 12000);
+
+    function handleCalendlyMessage(event) {
+        const iframe = widget.querySelector("iframe");
+        // An iframe load also fires for some error pages; wait for Calendly itself.
+        if (event.origin !== "https://calendly.com" || !iframe ||
+            event.source !== iframe.contentWindow ||
+            event.data?.event !== "calendly.event_type_viewed") return;
+
+        window.clearTimeout(timeout);
+        widget.hidden = false;
+        fallback.hidden = true;
+        window.removeEventListener("message", handleCalendlyMessage);
+    }
+
+    window.addEventListener("message", handleCalendlyMessage);
+
+    // Register handlers before loading the script to avoid cached-load races.
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    script.addEventListener("error", () => {
+        window.clearTimeout(timeout);
+        widget.hidden = true;
+        fallback.hidden = false;
+    });
+    document.head.appendChild(script);
+}
+
 // simple function to use for callback in the intersection observer
 const changeNav = (entries, observer) => {
     entries.forEach((entry) => {
