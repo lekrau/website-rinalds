@@ -22,7 +22,7 @@
 .knowledge-brand { display: flex; align-items: center; gap: 12px; }
 .knowledge-main { max-width: 1180px; margin: auto; padding: 30px 40px 70px; }
 .knowledge-page a:not(.button):hover { text-decoration: underline; text-underline-offset: 4px; }
-.knowledge-page .knowledge-section { min-height: 0; padding: 0; background: transparent; box-shadow: none; scroll-margin-top: calc(var(--header-height) + 25px); }
+.knowledge-page .knowledge-section { scroll-margin-top: calc(var(--header-height) + 25px); }
 .knowledge-page .button { transition: none; }
 .knowledge-page .button:hover { transform: none; text-decoration: underline; }
 .knowledge-page .knowledge-footer { border-top: 1px solid var(--editorial-line); display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 20px; padding: 22px max(24px, calc((100vw - 1100px) / 2)); font-size: 0.8125rem; }

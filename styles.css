@@ -237,8 +237,8 @@ header nav:not(.responsive) a.active {
     top: 40%;
 }
 
-/* Sections */
-main section {
+/* Landing page sections */
+.landing-page main > section {
     min-height: 350px;
     padding-top: var(--spacing__vertical--level1);
     padding-right: var(--spacing__horizontal--level1);
@@ -249,7 +249,7 @@ main section {
     scroll-margin-top: var(--header-height);
 }
 
-main section:nth-of-type(even) {
+.landing-page main > section:nth-of-type(even) {
     background-color: #f2f3ee;
 }
 
