@@ -1,54 +1,6 @@
-/* The blog overview builds on the landing page's design tokens and styles. */
-.knowledge-page {
-    --editorial-ink: #263e49;
-    --editorial-muted: #526873;
-    --editorial-line: #dce4e5;
-    color: var(--editorial-ink);
-}
-.knowledge-page a:focus-visible,
-.knowledge-page button:focus-visible,
-.knowledge-page [tabindex]:focus-visible {
-    outline: 2px solid var(--text--main);
-    outline-offset: 5px;
-}
-.knowledge-page .knowledge-header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    gap: 50px;
-    flex-wrap: nowrap;
-    border-bottom: 1px solid var(--editorial-line);
-}
-.knowledge-brand { display: flex; align-items: center; gap: 12px; }
-.knowledge-main { max-width: 1180px; margin: auto; padding: 30px 40px 70px; }
-.knowledge-page a:not(.button):hover { text-decoration: underline; text-underline-offset: 4px; }
-.knowledge-page .knowledge-section { scroll-margin-top: calc(var(--header-height) + 25px); }
-.knowledge-page .button { transition: none; }
-.knowledge-page .button:hover { transform: none; text-decoration: underline; }
-.knowledge-page .knowledge-footer { border-top: 1px solid var(--editorial-line); display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 20px; padding: 22px max(24px, calc((100vw - 1100px) / 2)); font-size: 0.8125rem; }
-@media (width <= 700px) {
-    .knowledge-main { padding: 24px 24px 48px; }
-    .knowledge-page .knowledge-header { flex-wrap: wrap; }
-    .knowledge-page .header-container { width: 100%; }
-    .knowledge-page .hamburger-menu { display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; transition: none; }
-    .knowledge-page .hamburger-menu:hover { transform: none; }
-    .knowledge-page header nav,
-    .knowledge-page header .CTA-bar { display: none; }
-    .knowledge-page:has(.responsive) { overflow: hidden; }
-    .knowledge-page header:has(.responsive) { height: 100dvh; align-items: flex-start; align-content: flex-start; }
-    .knowledge-page header nav.responsive { display: flex; flex-direction: column; justify-content: flex-start; height: auto; width: 100%; gap: 20px; }
-    .knowledge-page header nav.responsive a:not(.nav-page-switch) { padding: 10px 0; }
-}
-
-/* Match the landing page's logo-only header and left-aligned navigation. */
-.knowledge-page header nav { justify-content: flex-start; }
-.knowledge-page .knowledge-header nav a { border-bottom: 2px solid transparent; }
-.knowledge-page .knowledge-header nav:not(.responsive) a.active { border-bottom-color: var(--accent--main); }
-.knowledge-page .knowledge-header a:not(.nav-page-switch):hover { text-decoration: none; }
+/* Blog overview layout and article previews. */
 .blog-overview #steuerwissen,
 .blog-overview #beitraege { scroll-margin-top: calc(var(--header-height) + 25px); }
-/* Compact legal navigation shared by the knowledge and legal pages. */
-.knowledge-page .footer__legal { display: flex; flex-wrap: wrap; gap: 24px; color: var(--editorial-muted); }
 .blog-overview .overview-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 240px;
@@ -116,40 +68,6 @@
     text-decoration: none;
 }
 .blog-overview a.article-read:hover { background: #edf3f5; text-decoration: underline; }
-:is(.blog-overview, .article-page) .overview-sidebar h2 { margin-bottom: 22px; }
-:is(.blog-overview, .article-page) .advisor-portrait { width: 100%; height: auto; aspect-ratio: 8 / 9; object-fit: cover; }
-:is(.blog-overview, .article-page) .overview-sidebar h3 { font-size: 20px; font-weight: 400; color: var(--text--main); margin: 18px 0 4px; }
-:is(.blog-overview, .article-page) .overview-sidebar p { font-size: 15px; }
-/* Use the landing contact markup and shared clipboard behavior. */
-:is(.blog-overview, .article-page) .advisor-contact { margin-top: 22px; }
-:is(.blog-overview, .article-page) .advisor-contact .contact-method { display: block; margin-bottom: 16px; }
-:is(.blog-overview, .article-page) .advisor-contact .contact-method > a { display: inline-flex; align-items: center; gap: 8px; width: auto; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
-:is(.blog-overview, .article-page) .advisor-contact__logo {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-:is(.blog-overview, .article-page) .advisor-contact__logo--email {
-    /* Keep the email icon dark on white; preserve the WhatsApp asset's original colors. */
-    filter: brightness(0);
-    opacity: 0.65;
-}
-:is(.blog-overview, .article-page) .advisor-contact__logo--calendar {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-:is(.blog-overview, .article-page) .advisor-contact .contact-copy { color: var(--text--main); font-size: 14px; padding: 4px 0; max-width: 100%; }
-:is(.blog-overview, .article-page) .advisor-contact .contact-copy__value { overflow-wrap: anywhere; }
-:is(.blog-overview, .article-page) .advisor-contact .contact-method > a:hover,
-:is(.blog-overview, .article-page) .advisor-contact .contact-method > a:focus-visible,
-:is(.blog-overview, .article-page) .advisor-contact .contact-copy:hover,
-:is(.blog-overview, .article-page) .advisor-contact .contact-copy:focus-visible { color: var(--accent--main); }
-:is(.blog-overview, .article-page) .advisor-contact .contact-copy:focus-visible { outline-color: var(--accent--main); }
-:is(.blog-overview, .article-page) .advisor-contact .contact-copy__feedback { color: var(--text--main); }
 @media (width <= 1100px) {
     .blog-overview .overview-layout { grid-template-columns: minmax(0, 1fr); gap: 48px; }
     .blog-overview .overview-sidebar { max-width: 280px; }
