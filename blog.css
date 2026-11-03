@@ -41,10 +41,10 @@
 }
 
 /* Match the landing page's logo-only header and left-aligned navigation. */
-.blog-overview header nav { justify-content: flex-start; }
-.blog-overview .knowledge-header nav a { border-bottom: 2px solid transparent; }
-.blog-overview .knowledge-header nav:not(.responsive) a.active { border-bottom-color: var(--accent--main); }
-.blog-overview .knowledge-header a:not(.nav-page-switch):hover { text-decoration: none; }
+.knowledge-page header nav { justify-content: flex-start; }
+.knowledge-page .knowledge-header nav a { border-bottom: 2px solid transparent; }
+.knowledge-page .knowledge-header nav:not(.responsive) a.active { border-bottom-color: var(--accent--main); }
+.knowledge-page .knowledge-header a:not(.nav-page-switch):hover { text-decoration: none; }
 .blog-overview #steuerwissen,
 .blog-overview #beitraege { scroll-margin-top: calc(var(--header-height) + 25px); }
 /* Compact legal navigation shared by the knowledge and legal pages. */
