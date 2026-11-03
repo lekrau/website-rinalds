@@ -26,7 +26,6 @@ body {
 h1 {
     font-size: calc(1.5vw + 15px);
     font-weight: 500;
-    color: var(--text--on-dark);
 }
 
 h2 {
@@ -82,7 +81,7 @@ button,
 }
 
 /* Header/Nav */
-header {
+.site-header {
     position: fixed;
     z-index: 1;
     width: 100vw;
@@ -118,14 +117,14 @@ header {
     display: inline-block;
 }
 
-header nav {
+.site-header nav {
     display: flex;
     gap: 10px;
     justify-content: flex-start;
     flex-grow: 1;
 }
 
-header .button {
+.site-header .button {
     padding: 8px 20px;
     border-radius: 18px;
 }
@@ -141,41 +140,41 @@ header .button {
         align-items: center;
     }
 
-    header nav {
+    .site-header nav {
         display: none;
     }
 
-    header .CTA-bar {
+    .site-header .CTA-bar {
         display: none;
     }
 
-    body:has(.responsive) {
+    body:has(.site-header nav.responsive) {
         /* Disable scrolling */
         overflow: hidden;
     }
 
-    header:has(.responsive) {
+    .site-header:has(nav.responsive) {
         height: 100vh;
         align-items: flex-start;
         gap: 30px;
     }
 
-    .responsive {
+    .site-header nav.responsive {
         height: 100%;
         display: flex;
         flex-direction: column;
     }
 }
 
-header nav a {
+.site-header nav a {
     padding: 0 0.5vw;
 }
 
-header nav:has(.nav-page-switch) {
+.site-header nav:has(.nav-page-switch) {
     align-items: center;
 }
 
-header nav .nav-page-switch {
+.site-header nav .nav-page-switch {
     white-space: nowrap;
     word-spacing: 4px;
     margin-inline-start: var(--spacing__horizontal--level3);
@@ -184,19 +183,19 @@ header nav .nav-page-switch {
     font-weight: 600;
 }
 
-header nav .nav-page-switch:hover,
-header nav .nav-page-switch:focus-visible {
+.site-header nav .nav-page-switch:hover,
+.site-header nav .nav-page-switch:focus-visible {
     text-decoration: underline;
     text-decoration-skip-ink: none;
     text-underline-offset: 4px;
 }
 
-header nav .nav-page-switch:focus-visible {
+.site-header nav .nav-page-switch:focus-visible {
     outline: 2px solid var(--text--main);
     outline-offset: 3px;
 }
 
-header nav.responsive .nav-page-switch {
+.site-header nav.responsive .nav-page-switch {
     margin-inline-start: 0;
     margin-block-start: var(--spacing__vertical--level5);
     padding-block-start: var(--spacing__vertical--level3);
@@ -205,11 +204,11 @@ header nav.responsive .nav-page-switch {
     border-block-start: 1px solid #dce4e5;
 }
 
-header nav.responsive:has(.nav-page-switch) {
+.site-header nav.responsive:has(.nav-page-switch) {
     align-items: stretch;
 }
 
-header nav:not(.responsive) a.active {
+.site-header nav:not(.responsive) a.active {
     border-bottom: 2px solid var(--accent--main);
 }
 
@@ -228,6 +227,7 @@ header nav:not(.responsive) a.active {
 }
 
 .hero h1 {
+    color: var(--text--on-dark);
     position: absolute;
     left: 10%;
     top: 40%;

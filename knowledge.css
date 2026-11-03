@@ -88,22 +88,22 @@
         transform: none;
     }
 
-    .knowledge-page header nav,
-    .knowledge-page header .CTA-bar {
+    .knowledge-page .site-header nav,
+    .knowledge-page .site-header .CTA-bar {
         display: none;
     }
 
-    .knowledge-page:has(.responsive) {
+    .knowledge-page:has(.site-header nav.responsive) {
         overflow: hidden;
     }
 
-    .knowledge-page header:has(.responsive) {
+    .knowledge-page .site-header:has(nav.responsive) {
         height: 100dvh;
         align-items: flex-start;
         align-content: flex-start;
     }
 
-    .knowledge-page header nav.responsive {
+    .knowledge-page .site-header nav.responsive {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -112,13 +112,13 @@
         gap: 20px;
     }
 
-    .knowledge-page header nav.responsive a:not(.nav-page-switch) {
+    .knowledge-page .site-header nav.responsive a:not(.nav-page-switch) {
         padding: 10px 0;
     }
 }
 
 /* Match the landing page's logo-only header and left-aligned navigation. */
-.knowledge-page header nav {
+.knowledge-page .site-header nav {
     justify-content: flex-start;
 }
 

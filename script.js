@@ -81,7 +81,7 @@ if (document.body.classList.contains("blog-overview")) {
 }
 
 function setupOverviewNavigation() {
-    const header = document.querySelector("header");
+    const header = document.querySelector(".site-header");
     const nav = header.querySelector("nav");
 
     function targetFromHash(hash) {
@@ -167,7 +167,7 @@ function setupOverviewNavigation() {
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function toggleHamburgerMenu() {
-    const nav = document.querySelector("header nav");
+    const nav = document.querySelector(".site-header nav");
     const CLASS_NAME = "responsive";
     const isOpen = nav.classList.contains(CLASS_NAME);
 
@@ -181,7 +181,7 @@ function toggleHamburgerMenu() {
 }
 
 function closeHamburgerMenu() {
-    const nav = document.querySelector("header nav");
+    const nav = document.querySelector(".site-header nav");
     nav.classList.remove("responsive");
 
     hamburgerMenuButton.setAttribute("aria-expanded", "false");
