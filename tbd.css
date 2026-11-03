@@ -7,8 +7,15 @@ body {
     background: white;
 }
 
-main { display: grid; place-items: center; }
-h1 { font-size: clamp(4rem, 15vw, 10rem); font-weight: 500; }
+main {
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-weight: 500;
+}
 
 .breadcrumbs ol {
     display: flex;
@@ -18,8 +25,25 @@ h1 { font-size: clamp(4rem, 15vw, 10rem); font-weight: 500; }
     list-style: none;
 }
 
-.breadcrumbs li { overflow-wrap: anywhere; }
-.breadcrumbs li + li::before { content: "/"; margin-right: 12px; }
-.breadcrumbs a { color: inherit; text-underline-offset: 3px; }
-.breadcrumbs a:hover { text-decoration: none; }
-.breadcrumbs a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.breadcrumbs li {
+    overflow-wrap: anywhere;
+}
+
+.breadcrumbs li+li::before {
+    content: "/";
+    margin-right: 12px;
+}
+
+.breadcrumbs a {
+    color: inherit;
+    text-underline-offset: 3px;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: none;
+}
+
+.breadcrumbs a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}

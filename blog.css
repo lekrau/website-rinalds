@@ -1,13 +1,20 @@
 /* Blog overview layout and article previews. */
 .blog-overview #steuerwissen,
-.blog-overview #beitraege { scroll-margin-top: calc(var(--header-height) + 25px); }
+.blog-overview #beitraege {
+    scroll-margin-top: calc(var(--header-height) + 25px);
+}
+
 .blog-overview .overview-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 240px;
     gap: 64px;
     align-items: start;
 }
-.blog-overview .overview-content { min-width: 0; }
+
+.blog-overview .overview-content {
+    min-width: 0;
+}
+
 .blog-overview h1 {
     font-family: var(--system-ui);
     font-size: 40px;
@@ -18,34 +25,64 @@
     max-width: 920px;
     margin-bottom: 8px;
 }
-.blog-overview h2 { color: var(--text--main); font-size: 24px; line-height: 1.3; margin-bottom: 20px; font-weight: 400; }
-.blog-overview .overview-intro h2 { margin-bottom: 26px; font-size: 25px; }
-.blog-overview .overview-intro p { font-size: 16px; line-height: 1.65; }
-.blog-overview .overview-intro p + p { margin-top: 18px; }
+
+.blog-overview h2 {
+    color: var(--text--main);
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.blog-overview .overview-intro h2 {
+    margin-bottom: 26px;
+    font-size: 25px;
+}
+
+.blog-overview .overview-intro p {
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.blog-overview .overview-intro p+p {
+    margin-top: 18px;
+}
+
 .blog-overview .overview-posts {
     margin-top: 38px;
     padding-top: 30px;
     border-top: 1px solid var(--editorial-line);
 }
-.blog-overview .overview-posts > h2 { margin-bottom: 26px; }
+
+.blog-overview .overview-posts>h2 {
+    margin-bottom: 26px;
+}
+
 .blog-overview .post-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px;
 }
+
 .blog-overview .article-preview {
     display: flex;
     flex-direction: column;
     min-width: 0;
     align-items: flex-start;
 }
-.blog-overview .article-preview__image { width: 100%; margin-bottom: 18px; }
+
+.blog-overview .article-preview__image {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
 .blog-overview .article-preview__image img {
     width: 100%;
     height: auto;
     aspect-ratio: 8 / 5;
     object-fit: cover;
 }
+
 .blog-overview .article-preview h3 {
     color: var(--text--main);
     font-size: 18px;
@@ -54,7 +91,13 @@
     margin: 0 0 12px;
     text-wrap: pretty;
 }
-.blog-overview .article-preview p { font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
+
+.blog-overview .article-preview p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
 .blog-overview .article-read {
     display: inline-block;
     margin-top: auto;
@@ -67,19 +110,54 @@
     line-height: 1.5;
     text-decoration: none;
 }
-.blog-overview a.article-read:hover { background: #edf3f5; text-decoration: underline; }
-@media (width <= 1100px) {
-    .blog-overview .overview-layout { grid-template-columns: minmax(0, 1fr); gap: 48px; }
-    .blog-overview .overview-sidebar { max-width: 280px; }
+
+.blog-overview a.article-read:hover {
+    background: #edf3f5;
+    text-decoration: underline;
 }
-@media (width <= 900px) {
-    .blog-overview .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+@media (width <=1100px) {
+    .blog-overview .overview-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 48px;
+    }
+
+    .blog-overview .overview-sidebar {
+        max-width: 280px;
+    }
 }
-@media (width <= 600px) {
-    .blog-overview .knowledge-header { gap: 20px; }
-    .blog-overview h1 { font-size: 30px; }
-    .blog-overview .overview-intro h2 { font-size: 22px; margin-bottom: 22px; }
-    .blog-overview h2 { font-size: 22px; }
-    .blog-overview .post-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
-    .blog-overview .overview-posts { margin-top: 30px; padding-top: 26px; }
+
+@media (width <=900px) {
+    .blog-overview .post-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (width <=600px) {
+    .blog-overview .knowledge-header {
+        gap: 20px;
+    }
+
+    .blog-overview h1 {
+        font-size: 30px;
+    }
+
+    .blog-overview .overview-intro h2 {
+        font-size: 22px;
+        margin-bottom: 22px;
+    }
+
+    .blog-overview h2 {
+        font-size: 22px;
+    }
+
+    .blog-overview .post-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 36px;
+    }
+
+    .blog-overview .overview-posts {
+        margin-top: 30px;
+        padding-top: 26px;
+    }
 }

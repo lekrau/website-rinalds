@@ -1,13 +1,56 @@
 /* Legal pages use neutral navigation and the shared site design tokens. */
-.legal-page { min-height: 100dvh; display: flex; flex-direction: column; }
-.legal-page .knowledge-main { width: 100%; flex: 1; }
-.legal-page .legal-content { max-width: 720px; overflow-wrap: anywhere; }
-.legal-page h1 { color: var(--text--main); font-size: clamp(2rem, 4vw, 2.5rem); line-height: 1.2; font-weight: 400; margin-bottom: 24px; }
-.legal-page h2 { font-size: 1.5rem; line-height: 1.3; font-weight: 400; margin-bottom: 16px; }
-.legal-page p { line-height: 1.7; }
-.legal-page .legal-placeholder { padding: 20px; border-left: 3px solid var(--accent--main); background: #edf3f5; margin-bottom: 32px; }
-.legal-page .knowledge-section + .knowledge-section { margin-top: 32px; }
-.legal-page .footer__legal [aria-current="page"] { font-weight: 600; }
-@media (width <= 600px) {
-    .legal-page .knowledge-header { gap: 20px; }
+.legal-page {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.legal-page .knowledge-main {
+    width: 100%;
+    flex: 1;
+}
+
+.legal-page .legal-content {
+    max-width: 720px;
+    overflow-wrap: anywhere;
+}
+
+.legal-page h1 {
+    color: var(--text--main);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+.legal-page h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.legal-page p {
+    line-height: 1.7;
+}
+
+.legal-page .legal-placeholder {
+    padding: 20px;
+    border-left: 3px solid var(--accent--main);
+    background: #edf3f5;
+    margin-bottom: 32px;
+}
+
+.legal-page .knowledge-section+.knowledge-section {
+    margin-top: 32px;
+}
+
+.legal-page .footer__legal [aria-current="page"] {
+    font-weight: 600;
+}
+
+@media (width <=600px) {
+    .legal-page .knowledge-header {
+        gap: 20px;
+    }
 }
