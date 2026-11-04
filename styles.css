@@ -388,14 +388,14 @@ button,
     border-radius: 15px;
 }
 
-.logo-container {
+.contact__header {
     display: flex;
     gap: var(--spacing__horizontal--level2);
     align-items: center;
     margin-bottom: 30px;
 }
 
-.logo-padding {
+.contact__logo-frame {
     padding: 10px;
     border-radius: 15px;
     background-color: white;
