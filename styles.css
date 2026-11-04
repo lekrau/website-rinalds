@@ -4,6 +4,7 @@
     --text--main: #12557b;
     --text--on-dark: white;
     --accent--main: #94CB3E;
+    --accent--on-dark: #C5E895;
     --spacing__horizontal--level1: calc(20.6px + 2vw);
     --spacing__horizontal--level2: 30px;
     --spacing__horizontal--level3: 10px;
@@ -380,6 +381,7 @@ button,
 }
 
 .contact__details {
+    --accent--main: var(--accent--on-dark);
     background-color: var(--text--main);
     color: white;
     padding: calc(10px + 3vw);
