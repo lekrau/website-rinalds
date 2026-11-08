@@ -320,12 +320,12 @@ function setupClipboardButtons() {
             "aria-label",
             wasSuccessful ? `${label} kopiert` : `${label} konnte nicht kopiert werden`
         );
-        feedback.textContent = message;
+        if (feedback) feedback.textContent = message;
 
         button.copyFeedbackTimeout = window.setTimeout(() => {
             button.classList.remove("is-copied", "has-copy-error");
             button.setAttribute("aria-label", `${label} ${button.dataset.copyValue} kopieren`);
-            feedback.textContent = "";
+            if (feedback) feedback.textContent = "";
         }, 2500);
     }
 }
