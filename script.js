@@ -148,10 +148,11 @@ function setupSectionNavigation() {
 
 function setupMobileMenu() {
     const hamburgerMenuButton = document.querySelector(".hamburger-menu");
+    const nav = document.querySelector(".site-header nav");
+    if (!hamburgerMenuButton || !nav) return;
 
     /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
     function toggleHamburgerMenu() {
-        const nav = document.querySelector(".site-header nav");
         const CLASS_NAME = "responsive";
         const isOpen = nav.classList.contains(CLASS_NAME);
 
@@ -165,7 +166,6 @@ function setupMobileMenu() {
     }
 
     function closeHamburgerMenu() {
-        const nav = document.querySelector(".site-header nav");
         nav.classList.remove("responsive");
 
         hamburgerMenuButton.setAttribute("aria-expanded", "false");
