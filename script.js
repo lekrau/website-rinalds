@@ -197,14 +197,19 @@ function setupMobileMenu() {
 
 function setupFaqTabs() {
     // FAQ content stays in HTML so it can later be supplied by a CMS or translated.
-    const faqTabs = Array.from(document.querySelectorAll(".FAQ__questions [role='tab']"));
+    const faqTabs = Array.from(document.querySelectorAll(".FAQ__questions [role='tab']"))
+        .map((tab) => ({
+            tab,
+            panel: document.getElementById(tab.getAttribute("aria-controls"))
+        }))
+        .filter(({ panel }) => panel);
 
     function selectFaqTab(selectedTab) {
-        faqTabs.forEach((tab) => {
+        faqTabs.forEach(({ tab, panel }) => {
             const isSelected = tab === selectedTab;
             tab.setAttribute("aria-selected", String(isSelected));
             tab.tabIndex = isSelected ? 0 : -1;
-            document.getElementById(tab.getAttribute("aria-controls")).hidden = !isSelected;
+            panel.hidden = !isSelected;
         });
     }
 
@@ -215,12 +220,12 @@ function setupFaqTabs() {
         } catch {
             return;
         }
-        const selectedTab = faqTabs.find((tab) =>
+        const selectedItem = faqTabs.find(({ tab }) =>
             tab.id === targetId || tab.getAttribute("aria-controls") === targetId
         );
-        if (!selectedTab) return;
+        if (!selectedItem) return;
 
-        selectFaqTab(selectedTab);
+        selectFaqTab(selectedItem.tab);
         // Show the questions together with the answer, below the fixed header.
         requestAnimationFrame(() => {
             document.getElementById("FAQ").scrollIntoView({ block: "start" });
@@ -232,7 +237,7 @@ function setupFaqTabs() {
     // Image loading and the browser's initial fragment jump can change the position.
     window.addEventListener("load", selectFaqFromHash);
 
-    faqTabs.forEach((tab, index) => {
+    faqTabs.forEach(({ tab }, index) => {
         tab.addEventListener("click", () => selectFaqTab(tab));
         tab.addEventListener("keydown", (event) => {
             let nextIndex;
@@ -254,8 +259,8 @@ function setupFaqTabs() {
             }
 
             event.preventDefault();
-            selectFaqTab(faqTabs[nextIndex]);
-            faqTabs[nextIndex].focus({ preventScroll: true });
+            selectFaqTab(faqTabs[nextIndex].tab);
+            faqTabs[nextIndex].tab.focus({ preventScroll: true });
         });
     });
 }
