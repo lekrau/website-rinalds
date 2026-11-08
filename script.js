@@ -42,47 +42,12 @@ function setupCalendly() {
     document.head.appendChild(script);
 }
 
-// simple function to use for callback in the intersection observer
-const changeNav = (entries, observer) => {
-    entries.forEach((entry) => {
-        // verify the element is intersecting
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
-            // remove old active class
-            const oldActive = document.querySelector(".active");
-            if (oldActive !== null) {
-                oldActive.classList.remove("active");
-            }
-            // get id of the intersecting section
-            const id = entry.target.getAttribute("id");
-            // find matching link & add appropriate class
-            const newLink = document.querySelector(`[href="#${id}"]`)
-            if (newLink !== null) {
-                newLink.classList.add("active");
-            }
-        }
-    });
-}
+setupSectionNavigation();
 
-// init the observer
-const options = {
-    threshold: 0.55
-}
-
-if (document.body.classList.contains("blog-overview")) {
-    setupOverviewNavigation();
-} else {
-    const observer = new IntersectionObserver(changeNav, options);
-
-    // target the elements to be observed
-    const sections = document.querySelectorAll(".hero, section, footer");
-    sections.forEach((section) => {
-        observer.observe(section);
-    });
-}
-
-function setupOverviewNavigation() {
+function setupSectionNavigation() {
     const header = document.querySelector(".site-header");
-    const nav = header.querySelector("nav");
+    const nav = header?.querySelector("nav");
+    if (!nav) return;
 
     function targetFromHash(hash) {
         try {
@@ -109,7 +74,7 @@ function setupOverviewNavigation() {
 
     function markActive(selected) {
         items.forEach(({ link }) => {
-            const active = link === selected.link;
+            const active = link === selected?.link;
             link.classList.toggle("active", active);
             if (active) link.setAttribute("aria-current", "location");
             else link.removeAttribute("aria-current");
@@ -124,16 +89,29 @@ function setupOverviewNavigation() {
     function updateActive() {
         const scrollRange = document.documentElement.scrollHeight - window.innerHeight;
         if (scrollRange <= 1) {
-            markActive(hashItem() || items[0]);
+            markActive(hashItem() || (document.body.classList.contains("landing-page") ? null : items[0]));
             return;
         }
-        const readingLine = header.getBoundingClientRect().bottom + 26;
-        let selected = items[0];
+        const headerBottom = header.getBoundingClientRect().bottom;
+        const readingLine = headerBottom + 26;
+        // The landing hero has no section link; content pages start with their overview.
+        let selected = document.body.classList.contains("landing-page") ? null : items[0];
         items.forEach((item) => {
             if (item.target.getBoundingClientRect().top <= readingLine) selected = item;
         });
-        // Short desktop pages may reach the bottom before the last anchor can align.
-        if (window.scrollY > 0 && window.scrollY >= scrollRange - 1) selected = items.at(-1);
+        // An explicitly requested anchor may be unable to reach the reading line
+        // on short pages. Honor it at the bottom without forcing the last section.
+        const requested = hashItem();
+        if (requested && window.scrollY >= scrollRange - 1 &&
+            requested.target.getBoundingClientRect().top > readingLine) selected = requested;
+        // The last section may never reach the reading line on short pages.
+        // Only activate it early if the entire section is visible below the header.
+        const last = items.at(-1);
+        const lastRect = last.target.getBoundingClientRect();
+        if (window.scrollY > 0 && window.scrollY >= scrollRange - 1 &&
+            lastRect.top >= headerBottom - 1 && lastRect.bottom <= window.innerHeight + 1) {
+            selected = last;
+        }
         markActive(selected);
     }
 
@@ -147,22 +125,23 @@ function setupOverviewNavigation() {
         });
     }
 
-    new ResizeObserver(() => {
+    const resizeObserver = new ResizeObserver(() => {
         // The expanded mobile menu is an overlay, not the normal header height.
         if (nav.classList.contains("responsive")) return;
         document.body.style.setProperty("--header-height", `${header.getBoundingClientRect().height}px`);
         scheduleUpdate();
-    }).observe(header);
-    items.forEach((item) => item.link.addEventListener("click", () => markActive(item)));
+    });
+    resizeObserver.observe(header);
+    items.forEach((item) => {
+        resizeObserver.observe(item.target);
+        item.link.addEventListener("click", scheduleUpdate);
+    });
     window.addEventListener("scroll", scheduleUpdate, { passive: true });
     window.addEventListener("resize", scheduleUpdate);
-    window.addEventListener("hashchange", () => {
-        const item = hashItem();
-        if (item) markActive(item);
-        else scheduleUpdate();
-    });
+    window.addEventListener("hashchange", scheduleUpdate);
+    window.addEventListener("load", scheduleUpdate);
     window.addEventListener("pageshow", scheduleUpdate);
-    markActive(hashItem() || items[0]);
+    scheduleUpdate();
 }
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */

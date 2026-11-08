@@ -102,15 +102,6 @@
     }
 }
 
-/* Content pages reserve space for the active navigation underline. */
-.knowledge-page .knowledge-header nav a {
-    border-bottom: 2px solid transparent;
-}
-
-.knowledge-page .knowledge-header nav:not(.responsive) a.active {
-    border-bottom-color: var(--accent--main);
-}
-
 .knowledge-page .knowledge-header a:not(.nav-page-switch):hover {
     text-decoration: none;
 }
