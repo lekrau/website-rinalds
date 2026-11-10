@@ -44,7 +44,7 @@ Die Landingpage ist die Startseite `index.html`. Die Blogübersicht und die einz
 3. `index.html` im Browser öffnen. Für eine erste Inhaltsvorschau reicht ein Doppelklick. Nach dem Speichern einer Änderung die Browserseite neu laden.
 4. Nur die gewünschte Stelle bearbeiten und die Änderung anschließend prüfen. Das Veröffentlichen ist ein separater Schritt; lokal gespeicherte Änderungen sind dadurch noch nicht online.
 
-Extern geladene Bilder und der Terminkalender benötigen eine Internetverbindung. Für die abschließende Funktionsprüfung die vom Entwickler eingerichtete lokale Vorschau oder die Testwebsite verwenden; einzelne Browserfunktionen können sich beim direkten Öffnen einer Datei anders verhalten.
+Der Terminkalender benötigt eine Internetverbindung; alle eingebundenen Bilder liegen lokal im Projekt. Für die abschließende Funktionsprüfung die vom Entwickler eingerichtete lokale Vorschau oder die Testwebsite verwenden; einzelne Browserfunktionen können sich beim direkten Öffnen einer Datei anders verhalten.
 
 ### Texte auf der Landingpage ersetzen
 
@@ -81,15 +81,15 @@ Für einen zusätzlichen Artikel kann ein Entwickler die bestehende Artikelseite
 Bilder werden über `<img>` eingebunden. Beispielsweise steht das Porträt auf den Blogseiten so im Code:
 
 ```html
-<img class="advisor-portrait" src="https://up.picr.de/51383293hs.png"
+<img class="advisor-portrait" src="assets/images/portrait-placeholder.png"
     alt="Porträt-Platzhalter für Rinalds" width="320" height="360">
 ```
 
 Für einen Bildwechsel `src` durch die Adresse des neuen Bildes ersetzen und `alt` als passende kurze Bildbeschreibung aktualisieren. Leere Beschreibungen (`alt=""`) bei rein dekorativen Bildern können leer bleiben. Klasse und umgebende HTML-Struktur erhalten die Position im Layout.
 
-Die meisten Bilder liegen aktuell bei externen Bilddiensten, insbesondere auf `up.picr.de` und `images.unsplash.com`. Sie sind keine im Repository gespeicherten Bilddateien. Der neue `src`-Wert muss auf eine Bilddatei zeigen, nicht auf eine Freigabe- oder Vorschauseite.
+Alle eingebundenen Bilder liegen im Projektordner `assets/images/`: Logo, großes Bild der Landingpage, Kontakticons, Artikel- und Porträtplatzhalter sowie das Symbol für die drei Schritte auf der Landingpage.
 
-Alternativ können Bilder im Projekt gespeichert werden, etwa als `images/portraet.jpg`; dann diesen relativen Pfad als `src` verwenden und den Bildordner mit veröffentlichen. Ein lokaler Pfad wie `/Users/...` funktioniert auf der veröffentlichten Website nicht.
+Neue Bilder ebenfalls in `assets/images/` ablegen, etwa als `assets/images/portraet.jpg`; dann diesen relativen Pfad als `src` verwenden und den Bildordner mit veröffentlichen. Ein lokaler Pfad wie `/Users/...` funktioniert auf der veröffentlichten Website nicht. Bei externen Bildadressen muss der `src`-Wert direkt auf eine Bilddatei zeigen, nicht auf eine Freigabe- oder Vorschauseite.
 
 Ein ähnliches Seitenverhältnis hilft, den vorgesehenen Bildausschnitt zu erhalten. Bei abweichenden Bildproportionen kann eine Anpassung der Größenangaben oder des Zuschnitts nötig werden. Anschließend auf großem und kleinem Bildschirm prüfen. Ein mehrfach verwendetes Bild, beispielsweise das Logo, muss an allen betroffenen Stellen ersetzt werden.
 
@@ -179,6 +179,6 @@ Die Tests prüfen die aktive Abschnittsnavigation in einer simulierten Browserum
 
 Zugangsdaten über einen getrennten sicheren Weg übergeben; sie gehören nicht in diese README.
 
-Der aktuelle Quellcode enthält noch Platzhaltertexte, externe Platzhalterbilder, zwei TBD-Artikelseiten sowie unvollständige Inhalte für Impressum und Datenschutz. Bei der endgültigen Übergabe den tatsächlichen Stand hier aktualisieren.
+Der aktuelle Quellcode enthält noch Platzhaltertexte und -bilder, zwei TBD-Artikelseiten sowie unvollständige Inhalte für Impressum und Datenschutz. Bei der endgültigen Übergabe den tatsächlichen Stand hier aktualisieren.
 
 Für eine spätere Beauftragung genügt als technischer Einstieg: „Die Website ist eine statische HTML-/CSS-/JavaScript-Website ohne CMS und Build-Schritt. Texte und Bilder werden direkt in den HTML-Dateien gepflegt. Der Quellcode und die Pflegehinweise liegen im Repository website-rinalds.“ Dazu benötigt der neue Entwickler Zugriff auf den aktuellen Code und die Informationen zum Hosting und zur Veröffentlichung.
