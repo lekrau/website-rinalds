@@ -1,12 +1,12 @@
-# Website Rinalds – Inhaltspflege und Übergabe
+# Website-Pilot Rinalds – Inhaltspflege und Übergabe
 
-> Entwurf für das Übergabegespräch. Die Angaben zu Hosting und Veröffentlichung am Ende sind noch zu ergänzen. Die Dateibeschreibungen beziehen sich auf den aktuellen Stand im Repository.
+Dieses Projekt ist ein statischer Website-Pilot zur Demonstration von Gestaltung, Struktur und Funktionen. Platzhaltertexte und -bilder gehören zum Pilotumfang. Produktiver Go-live, Hosting und laufende Wartung sind nicht Bestandteil des vereinbarten Projekts.
 
-Diese Anleitung hilft Rinalds, auch später Inhalte ändern zu lassen oder selbst kleinere Änderungen vorzunehmen. Sie zeigt, wo Texte und Bilder liegen, welche Technologien verwendet werden und was ein anderer Entwickler für die Weiterarbeit benötigt.
+Diese Anleitung dient der späteren Orientierung: Sie zeigt Rinalds und einem nachfolgenden Entwickler, wo Texte und Bilder liegen und wie kleinere Inhaltsänderungen vorgenommen werden können. Die Übergabe erfolgt als ZIP-Archiv per E-Mail.
 
 ## 1. Wo liegt die Website und wie ist sie aufgebaut?
 
-Der Quellcode liegt im GitHub-Repository [website-rinalds](https://github.com/lekrau/website-rinalds). Ein Repository ist der Projektordner mit seiner Änderungshistorie. Der Zugriff für Rinalds wird bei der Übergabe geklärt.
+Der Quellcode wird im GitHub-Repository [website-rinalds](https://github.com/lekrau/website-rinalds) entwickelt. Rinalds erhält den vereinbarten Übergabestand als ZIP mit Projektdateien, Bildern, Lizenzhinweisen und dieser README. Für die Arbeit mit dem entpackten Projekt ist kein GitHub-Zugriff erforderlich.
 
 Die Website besteht aus statischen Dateien:
 
@@ -39,12 +39,12 @@ Die Landingpage ist die Startseite `index.html`. Die Blogübersicht und die einz
 
 ### Vorbereitung und Vorschau
 
-1. Den aktuellen Projektordner beschaffen und vor der Bearbeitung eine Sicherung anlegen beziehungsweise mit Git einen nachvollziehbaren Ausgangsstand festhalten.
+1. Das per E-Mail erhaltene ZIP entpacken und als ursprünglichen Übergabestand aufbewahren. Vor Änderungen eine Arbeitskopie des entpackten Projektordners anlegen. Alternativ kann ein Entwickler die Änderungen mit Git verwalten.
 2. Den gesamten Ordner in einem Code-Editor öffnen. Nicht mit einem Textverarbeitungsprogramm wie Word bearbeiten.
 3. `index.html` im Browser öffnen. Für eine erste Inhaltsvorschau reicht ein Doppelklick. Nach dem Speichern einer Änderung die Browserseite neu laden.
 4. Nur die gewünschte Stelle bearbeiten und die Änderung anschließend prüfen. Das Veröffentlichen ist ein separater Schritt; lokal gespeicherte Änderungen sind dadurch noch nicht online.
 
-Der Terminkalender benötigt eine Internetverbindung; alle eingebundenen Bilder liegen lokal im Projekt. Für die abschließende Funktionsprüfung die vom Entwickler eingerichtete lokale Vorschau oder die Testwebsite verwenden; einzelne Browserfunktionen können sich beim direkten Öffnen einer Datei anders verhalten.
+Der Terminkalender benötigt eine Internetverbindung; alle eingebundenen Bilder liegen lokal im Projekt. Für die Funktionsprüfung kann ein Entwickler die unten beschriebene lokale Vorschau verwenden; einzelne Browserfunktionen können sich beim direkten Öffnen einer Datei anders verhalten.
 
 ### Texte auf der Landingpage ersetzen
 
@@ -94,6 +94,7 @@ Neue Bilder ebenfalls in `assets/images/` ablegen, etwa als `assets/images/portr
 Ein ähnliches Seitenverhältnis hilft, den vorgesehenen Bildausschnitt zu erhalten. Bei abweichenden Bildproportionen kann eine Anpassung der Größenangaben oder des Zuschnitts nötig werden. Anschließend auf großem und kleinem Bildschirm prüfen. Ein mehrfach verwendetes Bild, beispielsweise das Logo, muss an allen betroffenen Stellen ersetzt werden.
 
 ### Bildquellen und Lizenzstand
+
 Stand: 10.11.2026
 
 | Datei | Quelle / Ersteller | Lizenz |
@@ -118,16 +119,16 @@ Bei einem Kopierbutton müssen **sichtbarer Text**, **`data-copy-value`** und di
 - E-Mail: Auch die Adresse nach `mailto:` im Linkziel aktualisieren.
 - Calendly: Die Terminadresse steht in `index.html` sowohl in `data-url` des Widgets als auch im Ersatzlink. Bei einem Wechsel beide Stellen anpassen und die vorhandenen URL-Parameter des Widgets berücksichtigen.
 
-## 4. Änderungen prüfen und veröffentlichen
+## 4. Änderungen prüfen
 
-Vor der Veröffentlichung die geänderten Seiten im Browser kontrollieren:
+Nach Inhaltsänderungen die betroffenen Seiten im Browser kontrollieren:
 
 - Stimmen Texte, Bilder und Links? Sind auch Vorschautexte und wiederholte Angaben aktualisiert?
 - Bleibt das Layout bei schmalem und breitem Browserfenster lesbar, insbesondere bei längeren Texten und neuen Bildern?
 - Funktionieren mobiles Menü, FAQ-Wechsel, Inhaltsverzeichnis und Kopierbuttons weiterhin? Bei geänderten Kontaktdaten den tatsächlich kopierten Wert prüfen.
 - Stimmen Terminlink und Kalenderziel? Falls der eingebettete Kalender nicht lädt, lässt sich der Ersatzlink öffnen?
 
-Danach die Änderung nachvollziehbar in Git sichern und über den bei der Übergabe festgelegten Veröffentlichungsweg bereitstellen. Abschließend die tatsächlich veröffentlichte Website prüfen. Wie Dateien auf den Webserver gelangen, ist in diesem Repository derzeit nicht dokumentiert und muss vor der Übergabe ergänzt werden.
+Den geprüften Stand als neue Arbeitsversion sichern, beispielsweise mit Git. Eine spätere Veröffentlichung erfordert eine gesonderte Einrichtung von Hosting und Veröffentlichungsweg; diese gehört nicht zur Pilotübergabe.
 
 ## 5. Technische Orientierung für einen nachfolgenden Entwickler
 
@@ -180,20 +181,10 @@ node --test tests/navigation.test.cjs
 
 Die Tests prüfen die aktive Abschnittsnavigation in einer simulierten Browserumgebung. Sie ersetzen keine Browserprüfung von Layout, Menü, FAQ, Kopierfunktion und Calendly.
 
-## 6. Vor der endgültigen Übergabe ergänzen
+## 6. Übergabestand und spätere Weiterarbeit
 
-| Angabe | Übergabestand |
-| --- | --- |
-| Live-Adresse und gegebenenfalls Testwebsite | Noch einzutragen |
-| Hostinganbieter und zuständiges Konto | Noch einzutragen |
-| Domainanbieter und zuständiges Konto | Noch einzutragen |
-| Zugriff von Rinalds auf Repository und aktuelle Projektdateien | Noch zu bestätigen |
-| Veröffentlichungsweg einschließlich Rückkehr zum vorherigen Stand | Noch zu dokumentieren |
-| Zuständiges Calendly-Konto und bestätigte Terminadresse | Noch zu bestätigen |
-| Ablage und Zugriff auf finale Bilder beziehungsweise Originaldateien | Noch einzutragen |
+Die Übergabe-E-Mail benennt das Übergabedatum und die Commit-ID des im ZIP enthaltenen Repository-Stands. Das Archiv enthält die Projektdateien einschließlich `assets/` und Lizenzhinweisen; die Git-Historie, private Projektunterlagen und persönliche Zugangsdaten gehören nicht zum Archiv.
 
-Zugangsdaten über einen getrennten sicheren Weg übergeben; sie gehören nicht in diese README.
+Der Pilot enthält Platzhaltertexte und -bilder, zwei TBD-Artikelseiten sowie Platzhalter für Impressum und Datenschutz. Finale Inhalte, weitere ausgearbeitete Artikel und eine spätere CMS-Integration sind nicht Bestandteil dieses Übergabestands. Calendly bleibt als externer Dienst eingebunden; die verwendete Terminadresse steht in `index.html`.
 
-Der aktuelle Quellcode enthält noch Platzhaltertexte und -bilder, zwei TBD-Artikelseiten sowie unvollständige Inhalte für Impressum und Datenschutz. Bei der endgültigen Übergabe den tatsächlichen Stand hier aktualisieren.
-
-Für eine spätere Beauftragung genügt als technischer Einstieg: „Die Website ist eine statische HTML-/CSS-/JavaScript-Website ohne CMS und Build-Schritt. Texte und Bilder werden direkt in den HTML-Dateien gepflegt. Der Quellcode und die Pflegehinweise liegen im Repository website-rinalds.“ Dazu benötigt der neue Entwickler Zugriff auf den aktuellen Code und die Informationen zum Hosting und zur Veröffentlichung.
+Für eine spätere Beauftragung genügt als technischer Einstieg: „Die Website ist eine statische HTML-/CSS-/JavaScript-Website ohne CMS und Build-Schritt. Texte und Bilder werden direkt in den HTML-Dateien gepflegt. Der Quellcode und die Pflegehinweise liegen im übergebenen ZIP.“ Dieses Archiv bildet die Grundlage für einen nachfolgenden Entwickler; Hosting und Veröffentlichung sind bei Bedarf separat zu organisieren.
