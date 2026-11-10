@@ -93,6 +93,21 @@ Neue Bilder ebenfalls in `assets/images/` ablegen, etwa als `assets/images/portr
 
 Ein ähnliches Seitenverhältnis hilft, den vorgesehenen Bildausschnitt zu erhalten. Bei abweichenden Bildproportionen kann eine Anpassung der Größenangaben oder des Zuschnitts nötig werden. Anschließend auf großem und kleinem Bildschirm prüfen. Ein mehrfach verwendetes Bild, beispielsweise das Logo, muss an allen betroffenen Stellen ersetzt werden.
 
+### Bildquellen und Lizenzstand
+Stand: 10.11.2026
+
+| Datei | Quelle / Ersteller | Lizenz |
+| --- | --- | --- |
+| `Logo_klein_colored.png` | KI-generiert | Im Projekt mit ChatGPT erzeugt; keine separate Bildlizenz dokumentiert. |
+| `article-placeholder.png` | KI-generiert | Im Projekt mit Codex erzeugt; keine separate Bildlizenz dokumentiert. |
+| `portrait-placeholder.png` | KI-generiert | Im Projekt mit Codex erzeugt; keine separate Bildlizenz dokumentiert. |
+| `boxicons-XjQ8nxFvHxw-unsplash.png` | Boxicons auf Unsplash: [Originalseite](https://unsplash.com/illustrations/a-graphic-icon-representing-a-landscape-with-mountains-and-sun-XjQ8nxFvHxw) | Kostenlose, auch kommerzielle Nutzung und Bearbeitung sind erlaubt; Namensnennung ist nicht vorgeschrieben. Es gelten die [Unsplash-Lizenzbedingungen](https://unsplash.com/license). |
+| `danneiva-whatsapp-873316_1920.png` | Danneiva auf Pixabay: [Bild 873316](https://pixabay.com/vectors/whatsapp-application-call-873316/) | Die Seite nennt den 05.08.2015 als Veröffentlichungsdatum und zeigt einen Content-License-Hinweis. Nach § 4 der [Pixabay-Nutzungsbedingungen](https://pixabay.com/service/terms/) fällt vor dem 09.01.2019 veröffentlichtes Material unter **CC0**. Markenrechte am WhatsApp-Logo werden dadurch nicht eingeräumt. |
+| `geralt-euro-3317432_1920.jpg` | Gerd Altmann / geralt auf Pixabay: [Originalseite, Bild 3317432](https://pixabay.com/de/photos/euro-geschenk-geldgeschenk-hand-3317432/). | Auf der Bildseite verlinkte [Pixabay-Inhaltslizenz](https://pixabay.com/de/service/license-summary/): kostenlose Nutzung und Bearbeitung ohne vorgeschriebene Namensnennung, vorbehaltlich der dort genannten Einschränkungen. Maßgeblich sind die verlinkten vollständigen Lizenzbedingungen. |
+| `mail.png` | Feather Icons, Cole Bemis: [Originalsymbol mail.svg](https://github.com/feathericons/feather/blob/main/icons/mail.svg). Selbst von SVG nach PNG konvertiert. | MIT-Lizenz; kommerzielle Nutzung und Bearbeitung erlaubt. Copyright- und Lizenzhinweis liegen in [assets/FEATHER-LICENSE.txt](assets/FEATHER-LICENSE.txt) und sind bei der Weitergabe beizubehalten. |
+
+[CC0](https://creativecommons.org/publicdomain/zero/1.0/) erlaubt urheberrechtlich auch kommerzielle Nutzung ohne vorgeschriebene Namensnennung, überträgt aber insbesondere keine Markenrechte. Für das WhatsApp-Symbol sind deshalb zusätzlich die Markenbedingungen zu berücksichtigen. Bei späteren Bildwechseln Quelle, Urheber und Lizenzstand in dieser Tabelle mitpflegen.
+
 ### Kontaktdaten und Terminlinks ändern
 
 Kontaktdaten sind an mehreren Stellen direkt eingetragen: im Kontaktbereich und Footer der Landingpage, in den Seitenleisten der Blogseiten sowie gegebenenfalls auf den rechtlichen Seiten. Im Projekt nach dem alten Wert suchen und die Fundstellen einzeln prüfen.
